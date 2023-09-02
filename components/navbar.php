@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="navbar shadow">
 
     <section class="logo-image">
         <a href="#"><img src="./views/images/main_logo.png" alt="ETC Logo."></a>
@@ -15,7 +15,7 @@
         </ul>
 
         <section class="navbar-login">
-            <button class="button-secondary shadow"> Entrar </button>
+            <button class="button button-secondary shadow"> Entrar </button>
         </section>
 
     </section>

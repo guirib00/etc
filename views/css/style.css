@@ -1,9 +1,29 @@
 body {
     font-family: 'Open Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    letter-spacing: 0.75px;
-    font-size: 16px;
-    margin: 10px;
+    letter-spacing: 0.064rem;
+    font-size: 16px; /* cada REM equivale a 16 PIXELS */
+    margin: 0;
     padding: 0;
+    text-rendering: optimizeLegibility;
+}
+
+hr {
+    border:none;
+    background: rgba(0, 0, 0, .1);
+    width: 100%;
+}
+
+.thin-line {
+    height: 0.016rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.bold-line {
+    height: 1rem;
+    margin-top: 6rem;
+    margin-bottom: 8rem;
+    width: 45%;
 }
 
 .container {
@@ -13,17 +33,38 @@ body {
     flex-direction: column;
 }
 
+.navbar {
+    position: fixed;
+    min-width: 100%;
+    background: #002C3D;
+    z-index: 1;
+}
+
 .navbar .logo-image {
-    float: left;
+    position: absolute;
+    left: 0;
 }
 
 .navbar .logo-image img {
-    max-width: 6rem;
+    max-width: 6.75rem;
     padding: 0.5rem 1.5rem;
 }
 
-.intro-background {
-    max-width: 100%;
+.intro-container {
+    margin-top: 6rem;
+    padding-bottom: 4rem;
+}
+
+.intro-content {
+    position: relative;
+    text-align: left;
+    max-width: 40rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    font-size: 2.625rem;
+    color: #fff;
 }
 
 .intro-background img {
@@ -32,12 +73,16 @@ body {
     top: 0;
     left: 0;
     z-index: -1;
-    opacity: 0.2;
+    height: auto;
+}
+
+.gray-filter {
+    filter: grayscale(80%) invert(35%) blur(2px);
 }
 
 .navbar-links {
     display: flex;
-    max-width: 80rem;
+    max-width: 82rem;
     justify-content: center;
     align-items: center;
     margin-right: auto;
@@ -49,26 +94,144 @@ body {
 }
 
 .navbar-links ul li {
-    padding: 0.75rem 2.25rem;
+    padding: 0.75rem 1rem;
     list-style: none;
 }
 
 .navbar-links ul li a {
+    color: #D4D4D4;
+    padding: 0.75rem 2.75rem;
+    font-size: 1.125rem;
+    text-decoration: none;
+    font-weight: 400;
+    border-bottom: 4px transparent solid;
+    transition: all .015s ease-in-out;
+}
+
+.navbar-links ul li a:hover {
+    border-bottom: 4px #D4D4D4 solid;
+}
+
+.navbar-login {
+    position: relative;
+    left: 8rem;
+}
+
+.app-ratings-container {
+    background: #E6E6E6;
+    padding: 1rem;
+
+}
+
+.app-rating-box {
+    max-width: 84rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.app-rating {
+    background: white;
+    max-width: 20rem;
+    padding: 1rem;
+    margin: 2.25rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-rating-picture img{
+    border-radius: 4rem;
+    max-width: 100%;
+    height: 8rem;
+}
+
+.app-rating-stars {
+    min-width: 20rem;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 0.5rem;
+}
+
+.star {
+    color: #DAA520;
+    font-size: 2rem;
+    margin: 0.25rem;
+}
+
+.footer {
+    padding: 0 2rem;
+    background: #D4D4D4;
+
+}
+
+.footer-container {
+    max-width: 82rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer .social-icons img {
+    max-width: 100%;
+    height: 3rem;
+}
+
+.footer-second-part {
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -5.875rem;
+    text-align: center;
+}
+
+.footer-brand-logo{
+    max-width: 9.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.up-arrow {
+    max-width: 8.5rem;
+    float: right;
+    margin-top: -3.5rem;
+    padding: 1rem;
+    margin-right: 2rem;
+}
+
+.up-arrow a {
+    padding: 0 1rem;
+    font-weight: 600;
+    font-size: 2rem;
+    color: #00131B;
+}
+
+.button {
+    padding: 0.75rem 4rem;
+    border: none;
     color: white;
-    padding: 0.75rem 3.75rem;
-    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 3.125rem;
+    font-weight: 600;
+    transition: all 0.15s ease-in-out;
+}
+
+.button:hover {
+    opacity: 0.75;
 }
 
 .button-secondary {
     background: #006992;
-    padding: 0.75rem 4rem;
-    border: none;
-    color: white;
-    border-radius: 3.125rem;
-    cursor: pointer;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
+}
+
+.button-primary {
+    background: #00131B;
+    font-size: 2rem;
 }
 
 .shadow {
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.thin {
+    font-weight: 300;
 }
