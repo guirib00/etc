@@ -1,16 +1,55 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Open Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    letter-spacing: 0.064rem;
+    letter-spacing: 0.1em;
     font-size: 16px; /* cada REM equivale a 16 PIXELS */
     margin: 0;
     padding: 0;
     text-rendering: optimizeLegibility;
+    line-height: 1.5;
+    word-spacing: 0.05em;
 }
+  
+  /* Estilos para dispositivos de tela pequena (smartphone) */
+  @media (max-width: 992px) {
+    body {
+      font-size: 8px;
+    }
+  }
+
+  /* Estilos para dispositivos de tela pequena (smartphone) */
+  @media (max-width: 768px) {
+    body {
+      font-size: 6px;
+    }
+  }
+
+    /* Estilos para dispositivos de tela pequena (smartphone) */
+    @media (max-width: 480px) {
+    body {
+        font-size: 4px;
+        }
+    }
 
 hr {
     border:none;
     background: rgba(0, 0, 0, .1);
     width: 100%;
+}
+
+button a {
+    color: white;
+}
+
+.darkmode-toggle {
+    z-index: 1;
+}
+
+.bottom-space {
+    padding-bottom: 18rem;
 }
 
 .thin-line {
@@ -26,33 +65,67 @@ hr {
     width: 45%;
 }
 
+.second-gray-background {
+    background: #D4D4D4;
+}
+
+.third-gray-background {
+    background: #E6E6E6 !important;
+}
+
+.blue-background {
+    background: #006992;
+}
+
+.blue-background-opacity {
+    background: rgba(0, 105, 146, .5);
+}
+
 .container {
     margin-right: auto;
     margin-left: auto;
     display: flex;
     flex-direction: column;
+    height: 100vh;
+}
+
+.navbar-login a {
+    color: #fff;
 }
 
 .navbar {
     position: fixed;
     min-width: 100%;
-    background: #002C3D;
+    background: #00131B;
+    /* background: linear-gradient(90deg, #00131B, #006992); */
     z-index: 1;
+}
+
+.navbar-connections {
+    position: fixed;
+    right: 0;
+    height: 60% !important;
+    top: 1.5rem;
+}
+
+.navbar-profile {
+    height: 100%;
+    min-width: auto;
+}
+
+.navbar-profile ~ .navbar-connections {
+    max-width: 18rem;
 }
 
 .navbar .logo-image {
     position: absolute;
     left: 0;
+    top: -0.25rem;
 }
 
 .navbar .logo-image img {
     max-width: 6.75rem;
     padding: 0.5rem 1.5rem;
-}
-
-.intro-container {
-    margin-top: 6rem;
-    padding-bottom: 4rem;
 }
 
 .intro-content {
@@ -62,22 +135,64 @@ hr {
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 1.5rem auto;
     font-size: 2.625rem;
     color: #fff;
 }
 
+.font-medium-size {
+    font-size: 1rem;
+}
+
+.services-content {
+    margin: 0;
+    color: #000;
+    max-width: 100%;
+    display: flex;
+}
+
+.services-container {
+    margin: 5rem;
+    max-width: 80rem;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-text {
+    max-width: 40rem;
+    overflow-x: auto;
+    padding: 2rem;
+}
+
+.image-filter {
+    background: linear-gradient(0deg, #00131B 76.11%, rgba(0, 19, 27, 0.60) 129.69%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    position: absolute;
+}
+
 .intro-background img {
     max-width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: -1;
-    height: auto;
+    object-fit: cover;
+}
+
+.support-input {
+    background: none;
+    font-size: 1rem;
+    padding: 1rem;
+    outline: none;
+    font-weight: 300;
+    border-top: none;
+    border-right: none;
+    border-left: none;
 }
 
 .gray-filter {
-    filter: grayscale(80%) invert(35%) blur(2px);
+    filter: brightness(0.5) blur(6px);
 }
 
 .navbar-links {
@@ -94,14 +209,14 @@ hr {
 }
 
 .navbar-links ul li {
-    padding: 0.75rem 1rem;
+    padding: .5rem 1rem;
     list-style: none;
 }
 
 .navbar-links ul li a {
     color: #D4D4D4;
     padding: 0.75rem 2.75rem;
-    font-size: 1.125rem;
+    font-size: 1rem;
     text-decoration: none;
     font-weight: 400;
     border-bottom: 4px transparent solid;
@@ -112,6 +227,73 @@ hr {
     border-bottom: 4px #D4D4D4 solid;
 }
 
+.navbar-profile-links ul {
+    display: block;
+    margin-top: 4.5rem;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-top: 2rem;
+}
+
+.navbar-connections .navbar-profile-links ul {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+}
+
+.navbar-connections .navbar-profile-links ul li a {
+    background: #fff;
+    color: #000;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.navbar-connections .navbar-profile-links ul li a img {
+    max-width: 3rem;
+    border-radius: 2rem;
+}
+
+.connections-header {
+    font-size: 1.5rem;    
+}
+
+.connections-header h1 {
+    padding: 0;
+    margin: 1rem;
+}
+
+.navbar-profile-links ul li {
+    margin: 1.5rem;
+}
+
+.navbar-profile-links-logout {
+    margin-top: auto;
+    position: absolute;
+    bottom: 0;
+    background: #D4D4D4;
+    width: 100%;
+}
+
+.navbar-profile-links ul li a {
+    background: #00131B;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-profile-links-logout li a{
+    background: #fff !important;
+    color: #000 !important;
+}
+
+.button-active {
+    background: #006992 !important;
+}
+
 .navbar-login {
     position: relative;
     left: 8rem;
@@ -119,7 +301,8 @@ hr {
 
 .app-ratings-container {
     background: #E6E6E6;
-    padding: 1rem;
+    padding: 1rem 0;
+    padding-bottom: 0;
 
 }
 
@@ -152,6 +335,15 @@ hr {
     margin-top: 0.5rem;
 }
 
+.app-rating-services {
+    font-size: 1rem;
+    display: flex;
+}
+
+.app-rating-overview {
+    text-align: justify;
+}
+
 .star {
     color: #DAA520;
     font-size: 2rem;
@@ -161,7 +353,6 @@ hr {
 .footer {
     padding: 0 2rem;
     background: #D4D4D4;
-
 }
 
 .footer-container {
@@ -173,6 +364,15 @@ hr {
 .footer .social-icons img {
     max-width: 100%;
     height: 3rem;
+    margin: 0.2rem;
+}
+
+.footer .social-icons a {
+    text-decoration: none;  
+}
+
+.footer .social-icons a:hover {
+    opacity: 0.5;
 }
 
 .footer-second-part {
@@ -204,6 +404,12 @@ hr {
     color: #00131B;
 }
 
+button > a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
 .button {
     padding: 0.75rem 4rem;
     border: none;
@@ -228,10 +434,120 @@ hr {
     font-size: 2rem;
 }
 
+.button-register {
+    background: #00131B;
+}
+
+.text-shadow {
+    text-shadow: -2px 8px 32px #000;
+}
+
 .shadow {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    /* box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px; */
+    box-shadow: rgba(13, 38, 76, 0.19) 0px 9px 20px;
 }
 
 .thin {
     font-weight: 300;
+}
+
+.light {
+    font-weight: 400;
+}
+
+.white-background {
+    background: #fff;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-black {
+    color: #000;
+}
+
+.text-yellow {
+    color: #DAA520;
+}
+
+.painel-container {
+    max-width: 32rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3rem 1rem;
+    border-radius: 1rem;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+}
+
+.painel-area input {
+    background: #f0f0f0;
+    border: none;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    padding: 1rem 3rem;
+    margin: 1rem 0;
+    font-size: 1rem;
+    border-radius: .5rem;
+}
+
+.painel-area input:focus {
+    color: #006992;
+}
+
+.profile-image img {
+    max-width: 12rem;
+    border-radius: 12rem;
+}
+
+.profile-section {
+    position: relative;    
+}
+
+.profile-container {
+    background: #006992;
+}
+
+.profile-about {
+
+    max-width: 26rem;
+    margin-left: 8rem;
+}
+
+.profile-about {
+    display: flex;
+    margin-left: auto;
+    flex-direction: column;
+    margin-top: -12.35rem;
+}
+
+.rounded-circle {
+    background: transparent;
+    width: 8rem;
+    height: 8rem;
+    margin-top: -3rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.rounded-circle img {
+    width: 128px;
+    position: relative;
+    right: 2px;
+    top: 24px;
+}
+
+.button-register {
+    width: 18rem;
+    font-size: 1.5rem;
 }

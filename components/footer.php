@@ -8,10 +8,10 @@
             </aside>
 
             <section class="social-icons">
-                <img src="./views/images/social_media/instagram.png" alt="Instagram da Empresa ETC.">
-                <img src="./views/images/social_media/instagram.png" alt="Instagram da Empresa ETC.">
-                <img src="./views/images/social_media/instagram.png" alt="Instagram da Empresa ETC.">
-                <img src="./views/images/social_media/instagram.png" alt="Instagram da Empresa ETC.">
+                <a href="#"> <img src="./views/images/social_media/whatsapp.png" alt="Whatsapp da Empresa ETC."> </a>
+                <a href="#"> <img src="./views/images/social_media/instagram.png" alt="Instagram da Empresa ETC."> </a>
+                <a href="#"> <img src="./views/images/social_media/facebook.png" alt="Facebook da Empresa ETC."> </a>
+                <a href="#"> <img src="./views/images/social_media/twitter.png" alt="Twitter da Empresa ETC."> </a>
             </section>
 
         </section>
@@ -23,7 +23,7 @@
             </aside>
 
             <aside class="footer-brand-text">
-                ©2023 ETC ™, Todos os direitos reservados
+                ©2023 ETC ™. Todos os direitos reservados
             </aside>
 
         </section>
