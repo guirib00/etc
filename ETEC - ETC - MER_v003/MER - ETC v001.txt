@@ -1,0 +1,13 @@
+tb_gestores
+
+tb_contratantes
+
+tb_trabalhador
+
+tb_servicos
+
+tb_planos
+
+tb_mensagens
+
+tb_historico
