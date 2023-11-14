@@ -551,3 +551,18 @@ button > a {
     width: 18rem;
     font-size: 1.5rem;
 }
+.button-return{
+    margin-left: -5rem;
+    margin-top: 2rem;
+    padding: 0.75rem;
+    font-size: 14px;
+}
+.button-next {
+    width: 18rem;
+    font-size: 1.5rem;
+}
+
+input[type=date]{
+    margin-left: 2rem;
+    margin-right: auto;
+}

@@ -1,82 +1,111 @@
 <?php
-	include('./modules/conexao.php');
+    include('./modules/conexao.php');
     $erro = "";
 
-	if ($_POST) {
+    if ($_POST) {
         $registerType = $_POST['register_type'];
 
-        if($_POST['senha'] == $_POST['confirm_pass']){ //Verificação de senhas
+        if ($_POST['senha'] == $_POST['confirm_pass']) { //Verificação de senhas
 
-            if($registerType == "trabalhador"){ //Verificar input(radio)
-		        CadastrarTrabalhador($_POST['email'],$_POST['senha']); //Cadastro trabalhador
+            if ($registerType == "trabalhador") { //Verificar input(radio)
+                CadastrarTrabalhador($_POST['email'], $_POST['senha']); //Cadastro trabalhador
             }
 
-            if($registerType == "contratante"){ //Verificar input(radio) 
-                CadastrarContratante($_POST['email'],$_POST['senha']); //cadastro trabalhador
+            if ($registerType == "contratante") { //Verificar input(radio) 
+                CadastrarContratante($_POST['email'], $_POST['senha']); //cadastro trabalhador
             }
-
-        }
-
-        else{
+        } else {
             $erro = "As senhas são diferentes"; //As senhas estão diferentes
         }
     }
 ?>
 
+<style>
+    .invisible {
+        display: none;
+    }
+
+    .form-part {
+        display: none;
+    }
+
+    .visible {
+        display: block;
+    }
+</style>
+
 <section class="register-area">
-
     <section class="painel-container white-background shadow">
-
-        <form class="painel-area" method="post">
-
+        <form id="completeForm" method="post">
             <aside class="rounded-circle">
-                <a href="index.php"> <img src="./views/images/main_logo_alt.png"> </a>
+                <a href="index.php"> <img src=" ./views/images/main_logo_alt.png"> </a>
             </aside>
 
-            <label for="email"></label>
-            <input type="email" id="email" placeholder="Seu e-mail" name="email" autofocus required autocomplete="on"> </input>
+            <!-- Parte 1 -->
+            <div id="formPart1" class="form-part visible painel-area">
+                <label for="nome"></label>
+                <input type="text" name="nome" placeholder="Digite seu nome">
+                <br>
+                <label for="telefone"></label>
+                <input type="text" class="form-control" name="phone" placeholder="Digite seu telefone" title="Número de telefone precisa ser no formato (99) 9999-9999" required="required" />
+                <br>
+                <label for="Data de nascimento">
+                    <input type="date" placeholder="data de nascimento">
+                </label>
+                <br> 
+                <br>
+                <label for="type">
+                    <div class="text-center">Sou trabalhador <input type="radio" name="register_type" id="type" value="trabalhador"></div>
+                </label>
+                <br>
+                <label for="type-two">
+                    <div class="text-center">Sou contratante <input type="radio" name="register_type" id="type-two" value="contratante"></div>
+                </label>
+                <br>
+                <button type="button" class="button-secondary button button-next shadow" onclick="nextPart()">Proximo</button>
+            </div>
 
-            <br>
+            <!-- Parte 2 -->
+            <div id="formPart2" class="painel-area form-part">
+                <label for="email"></label>
+                <input type="email" name="email" placeholder="Seu e-mail" autofocus required autocomplete="on">
+                <br>
+                <label for="senha"></label>
+                <input type="password" name="senha" placeholder="Sua senha" required>
+                <br>
+                <label for="confirmar_senha"></label>
+                <input type="password" name="confirm_pass" placeholder="Confirmar senha" required>
+                <?php if (!empty($erro)) : ?>
+                    <p class="error-message text-center"><?php echo $erro; ?></p>
+                <?php endif; ?>
+                <br>
+                <br>
+                <br>
+                <div class="text-center">Já tem uma conta? <a href="painel-login.php">Login</a></div>
+                <br>
+            </div>
 
-            <label for="senha"></label>
-            <input type="password" id="senha" placeholder="Sua senha" name="senha" required> </input> <i id="toggleIcon" class="fas fa-eye-slash toggle-icon" onclick="togglePasswordVisibility()"></i></input> <!-- Adição do "required" que obriga o usuario escolher/digitar algo no input -->
-
-            <br>
-
-            <label for="confirmar_senha"></label>
-            <input type="password" id="confirmar_senha" placeholder="Confirmar senha" name="confirm_pass" required> </input>
-
-            <?php if (!empty($erro)) : ?>
-
-                <p class="error-message text-center"><?php echo $erro; ?></p> <!-- Criação e acionamento da variavel erro, acionada quando o usuario digita senhas diferentes no campo de senha e confirmar senha-->
-
-            <?php endif; ?>
-
-            <br>
-
-            <br>
-
-            <label for="type"> 
-            <div class="text-center">Sou trabalhador <input type="radio" name="register_type" id="type" value="trabalhador" required></input> </div>
-            </label>
-
-            <br>
-
-            <label for="type-two"> 
-            <div class="text-center">Sou contratante <input type="radio" name="register_type" id="type-two" value="contratante" required></input>
-            </div>    
-            </label>
-
-            <br>
-
-            <div class="text-center">Já tem uma conta? <a href="painel-login.php">Login</a></div>
-
-            <br>
-
-            <button class="button button-register shadow"><a href="#">Cadastrar</a></button>
-
+            <!-- Botões para navegação entre as partes -->
+            <div class="text-center">
+                <button type="button" id="return" class="button-return button-secondary button invisible" onclick="returnPart()">Voltar</button>
+                <button type="submit" id="cadastrar" class="button button-register shadow invisible"><a href="#">Cadastrar</a></button>
+            </div>
         </form>
-
     </section>
-
 </section>
+
+<script>
+    function nextPart() {
+        document.getElementById('formPart1').classList.remove('visible');
+        document.getElementById('formPart2').classList.add('visible');
+        document.getElementById('return').classList.remove('invisible');
+        document.getElementById('cadastrar').classList.remove('invisible');
+    }
+
+    function returnPart() {
+        document.getElementById('formPart2').classList.remove('visible');
+        document.getElementById('formPart1').classList.add('visible');
+        document.getElementById('return').classList.add('invisible');
+        document.getElementById('cadastrar').classList.add('invisible');
+    }
+</script>
