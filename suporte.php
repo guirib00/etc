@@ -33,7 +33,7 @@
     include("components/suporte-overview.php");
 
     /* include("components/app-ratings.php"); */
-
+    
     include("components/footer.php");
 
     ?>
