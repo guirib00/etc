@@ -566,3 +566,14 @@ input[type=date]{
     margin-left: 2rem;
     margin-right: auto;
 }
+.invisible {
+    display: none;
+}
+
+.form-part {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
