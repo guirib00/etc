@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+<script src="./views/js/questions-suporte.js"></script>
 
     <?php
 
@@ -33,6 +36,8 @@
     include("components/suporte-overview.php");
 
     /* include("components/app-ratings.php"); */
+
+    include("components/suporte-questions.php");
     
     include("components/footer.php");
 

@@ -2,6 +2,8 @@
 <html>
 <head>
 
+<script src="./views/js/navegacao-cadastro.js"></script>
+
     <?php
 
         include("modules/meta.php");

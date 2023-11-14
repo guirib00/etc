@@ -11,7 +11,7 @@
                 CadastrarTrabalhador($_POST['email'], $_POST['senha']); //Cadastro trabalhador
             }
 
-            if ($registerType == "contratante") { //Verificar input(radio) 
+            if ($registerType == "contratante") { //Verificar input(radio)
                 CadastrarContratante($_POST['email'], $_POST['senha']); //cadastro trabalhador
             }
         } else {
@@ -19,7 +19,6 @@
         }
     }
 ?>
-<script src="./views/js/navegacao-cadastro.js"></script>
 <section class="register-area">
     <section class="painel-container white-background shadow">
         <form id="completeForm" method="post">

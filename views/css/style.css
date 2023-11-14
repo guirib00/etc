@@ -49,7 +49,7 @@ button a {
 }
 
 .bottom-space {
-    padding-bottom: 29rem;
+    padding-bottom: 2rem;
 }
 
 .thin-line {
@@ -576,4 +576,47 @@ input[type=date]{
 
 .visible {
     display: block;
+}
+.medium-text{
+    font-size: 30px;
+    font-weight: bold;
+}
+.faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    position: relative;            
+}
+
+.question {
+    font-weight: bold;
+    cursor: pointer;
+    padding-right: 30px;
+    font-size: 20px;
+}
+
+.arrow-icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+}
+
+.answer {
+    display: none;
+    margin-top: 10px;
+    font-size: 15px;    
+}
+
+.answer.show {
+    display: block;
+}
+.rotate{        
+    transform: rotate(180deg);
+}
+.faq-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
 }
