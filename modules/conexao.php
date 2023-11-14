@@ -2,7 +2,7 @@
 session_start();
 $user = 'root';
 $pass = 'usbw';
-$bd = 'bd_etc';
+$bd = 'bd_etc2.0';
 $server = 'localhost';
 
 
@@ -61,10 +61,10 @@ function Login($usuario, $senha) {
 }
 
 
-function CadastrarTrabalhador($usuario, $senha) {
+function CadastrarTrabalhador($nome, $email ,$usuario, $senha) {
 
-    $comando = 'INSERT INTO tb_trabalhadores (id_trabalhador, nome_trabalhador, login_trabalhador, senha_trabalhador, fk_plano)
-    VALUES (null, "", "'.$usuario.'", "'.$senha.'", null)';
+    $comando = 'INSERT INTO tb_trabalhadores (id_trabalhador, nome_trabalhador, login_trabalhador, senha_trabalhador,email_trabalhador, fk_plano)
+    VALUES (null, "'.$nome.'", "'.$usuario.'", "'.$senha.'","'.$email.'", null)';
     $resultado = $GLOBALS['conn']->query($comando);
     
 	if($resultado){
@@ -74,14 +74,15 @@ function CadastrarTrabalhador($usuario, $senha) {
 
     else{
 		echo("Falha ao cadastrar:".$resultado->error);
+        echo $comando;
 	}
 
 }
 
 function CadastrarContratante($usuario, $senha) {
 
-    $comando = 'INSERT INTO tb_contratantes (id_contratante, nome_contratante, login_contratante, senha_contratante) 
-    VALUES (null, "", "'.$usuario.'", "'.$senha.'")';
+    $comando = 'INSERT INTO tb_contratantes (id_contratante, nome_contratante, login_contratante, senha_contratante, email_contratante) 
+    VALUES (null, "'.$nome.'", "'.$usuario.'", "'.$senha.'","'.$email.'")';
     $resultado = $GLOBALS['conn']->query($comando);
 
 	if($resultado){

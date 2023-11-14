@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `bd_etc2.0`.`tb_trabalhadores` (
   `escolaridade_trabalhador` INT NULL,
   `cep_trabalhador` VARCHAR(10) NULL,
   `tel_trabalhador` VARCHAR(20) NULL,
-  `fk_plano` INT NOT NULL,
+  `fk_plano` INT NULL,
   PRIMARY KEY (`id_trabalhador`),
   INDEX `fk_plano_idx` (`fk_plano` ASC),
   CONSTRAINT `fk_plano`
@@ -186,7 +186,6 @@ CREATE TABLE IF NOT EXISTS `bd_etc2.0`.`tb_vagas` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
 -- -----------------------------------------------------
 -- Table `mydb`.`tb_candidatos`
 -- -----------------------------------------------------

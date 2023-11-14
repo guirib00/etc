@@ -8,11 +8,11 @@
         if ($_POST['senha'] == $_POST['confirm_pass']) { //Verificação de senhas
 
             if ($registerType == "trabalhador") { //Verificar input(radio)
-                CadastrarTrabalhador($_POST['email'], $_POST['senha']); //Cadastro trabalhador
+                CadastrarTrabalhador($_POST['nome'], $_POST['email'], $_POST['login'], $_POST['senha']); //Cadastro trabalhador
             }
 
             if ($registerType == "contratante") { //Verificar input(radio)
-                CadastrarContratante($_POST['email'], $_POST['senha']); //cadastro trabalhador
+                CadastrarContratante($_POST['nome'], $_POST['email'], $_POST['login'], $_POST['senha']); //cadastro trabalhador
             }
         } else {
             $erro = "As senhas são diferentes"; //As senhas estão diferentes
@@ -29,14 +29,10 @@
             <!-- Parte 1 -->
             <div id="formPart1" class="form-part visible painel-area">
                 <label for="nome"></label>
-                <input type="text" name="nome" placeholder="Digite seu nome">
+                <input type="text" name="nome" placeholder="Digite seu nome" autofocus>
                 <br>
-                <label for="telefone"></label>
-                <input type="text" class="form-control" name="phone" placeholder="Digite seu telefone" title="Número de telefone precisa ser no formato (99) 9999-9999" required="required" />
-                <br>
-                <label for="Data de nascimento">
-                    <input type="date" placeholder="data de nascimento">
-                </label>
+                <label for="email"></label>
+                <input type="email" class="form-control" name="email" placeholder="Digite seu email" required autocomplete="on"></input>
                 <br> 
                 <br>
                 <label for="type">
@@ -52,11 +48,11 @@
 
             <!-- Parte 2 -->
             <div id="formPart2" class="painel-area form-part">
-                <label for="email"></label>
-                <input type="email" name="email" placeholder="Seu e-mail" autofocus required autocomplete="on">
+                <label for="login"></label>
+                <input type="text" name="login" placeholder="Digite seu login" required>
                 <br>
                 <label for="senha"></label>
-                <input type="password" name="senha" placeholder="Sua senha" required>
+                <input type="password" name="senha" placeholder="Digite sua senha" required>
                 <br>
                 <label for="confirmar_senha"></label>
                 <input type="password" name="confirm_pass" placeholder="Confirmar senha" required>
@@ -73,9 +69,15 @@
             <!-- Botões para navegação entre as partes -->
             <div class="text-center">
                 <button type="button" id="return" class="button-return button-secondary button invisible" onclick="returnPart()">Voltar</button>
-                <button type="submit" id="cadastrar" class="button button-register shadow invisible"><a href="#">Cadastrar</a></button>
+                <button type="button" onclick="submitForm()" id="cadastrar" class="button button-register shadow invisible"><a href="#">Cadastrar</a></button>
             </div>
         </form>
     </section>
 </section>
+
+<script>
+    function submitForm() {
+        document.getElementById("completeForm").submit();
+    }
+</script>
 

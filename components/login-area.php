@@ -2,7 +2,7 @@
 	include('./modules/conexao.php');
 
 	if ($_POST) {
-        if (Login($_POST['email'], $_POST['senha'])) {
+        if (Login($_POST['login'], $_POST['senha'])) {
   
         } 
         
@@ -22,13 +22,13 @@
                 <a href="index.php"> <img src="./views/images/main_logo_alt.png"> </a>
             </aside>
 
-            <label for="email"></label>
-            <input type="email" id="email" placeholder="Seu e-mail" name="email" autofocus> </input>
+            <label for="login"></label>
+            <input type="text" id="login" placeholder="Digite seu login" name="login" autofocus> </input>
 
             <br>
 
             <label for="senha"></label>
-            <input type="password" id="senha" placeholder="Sua senha" name="senha"> </input><i id="toggleIcon" class="fas fa-eye-slash toggle-icon" onclick="togglePasswordVisibility()"></i></input> <!-- Colocando o botão de mostrar/ocultar senha-->
+            <input type="password" id="senha" placeholder="Digite sua senha" name="senha"> </input><i id="toggleIcon" class="fas fa-eye-slash toggle-icon" onclick="togglePasswordVisibility()"></i></input> <!-- Colocando o botão de mostrar/ocultar senha-->
 
             <br>
 
