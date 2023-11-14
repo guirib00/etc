@@ -44,7 +44,7 @@
 
             <br>
 
-            <button class="button button-register shadow"><a href="profile.php">Entrar</a></button>
+            <button class="button button-register shadow">Entrar</button>
 
         </form>
 

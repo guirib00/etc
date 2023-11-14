@@ -33,6 +33,7 @@ function Login($usuario, $senha) {
         $_SESSION['account_id'] = $u->id_trabalhador;
         $_SESSION['account_name'] = $u->login_trabalhador;
         var_dump($_SESSION);
+        header("location: index.php");
         return true; // Login trabalhador bem-sucedido
     }
 
