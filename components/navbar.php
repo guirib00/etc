@@ -1,5 +1,11 @@
 <?php
-
+// Verifica se o usuário está autenticado
+if (isset($_SESSION['account_name'])) {
+    $loggedIn = true;
+    $username = $_SESSION['account_name'];
+} else {
+    $loggedIn = false;
+}
 ?>
 
 <nav class="navbar shadow">
@@ -21,17 +27,15 @@
         <section class="navbar-login">
 
         <?php   
-                if(!isset($_SESSION['account_name'])) { ?> 
+                if($loggedIn == false) { ?> 
                     <a href="painel-login.php"> <button class="button button-secondary shadow"> Entrar </button> </a>
         <?php   
                 } 
         ?>
 
         <?php
-                if(isset($_SESSION['account_name'])) { ?>
-                    <a href="profile.php?id=<?php echo $_SESSION['account_id']; ?>"> <button class="button button-secondary shadow"> <?php
-                        echo $_SESSION['account_name'];
-                    ?>
+                if($loggedIn == true) { ?>
+                    <a href="profile.php?id=<?php echo $_SESSION['account_id']; ?>"> <button class="button button-secondary button-perfil shadow" style="padding: 0.5rem 2rem;"><svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"> <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
                     </button> </a>   
         <?php 
                 }            

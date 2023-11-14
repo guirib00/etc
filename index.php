@@ -3,6 +3,7 @@
 <head>
 
     <?php
+        include("modules/conexao.php");
 
         include("modules/meta.php");
 
@@ -21,7 +22,7 @@
 </head>
 
 <body>
-
+    
 <section class="container">
 
     <?php

@@ -19,7 +19,7 @@
             
             <ul class="navbar-profile-links-logout">
             <hr class="thin-line">
-                <li><a href="#">Sair</a></li>
+                <li><a href="./modules/logout.php">Sair</a></li>
 
             </ul>
 
