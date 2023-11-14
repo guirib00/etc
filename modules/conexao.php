@@ -30,8 +30,10 @@ function Login($usuario, $senha) {
     if ($result->num_rows > 0) {
         $u = $result->fetch_object();
         $_SESSION['logado'] = true;
+        $_SESSION['account_name'] = $u->nome_trabalhador;
+        $_SESSION['account_email'] = $u->email_trabalhador;
         $_SESSION['account_id'] = $u->id_trabalhador;
-        $_SESSION['account_name'] = $u->login_trabalhador;
+        $_SESSION['account_login'] = $u->login_trabalhador;
         var_dump($_SESSION);
         header("location: index.php");
         return true; // Login trabalhador bem-sucedido
@@ -51,8 +53,10 @@ function Login($usuario, $senha) {
     if ($result_contratantes->num_rows > 0) {
         $u = $result_contratantes->fetch_object();
         $_SESSION['logado'] = true;
+        $_SESSION['account_name'] = $u->nome_contratante;
+        $_SESSION['account_email'] = $u->email_contratante;
         $_SESSION['account_id'] = $u->id_contratante;
-        $_SESSION['account_name'] = $u->login_contratante;
+        $_SESSION['account_login'] = $u->login_contratante;
         return true; // Login contratante bem-sucedido
     }
     // else { //  
@@ -96,9 +100,9 @@ function CadastrarContratante($usuario, $senha) {
 
 }
 
-function CheckarPerfil($email) {
+function CheckarPerfil($login) {
     $comando = 'SELECT * FROM tb_trabalhadores 
-    WHERE login_trabalhador = "'.$email.'"
+    WHERE login_trabalhador = "'.$login.'"
     LIMIT 1';
 
     $resultado = $GLOBALS['conn']->query($comando);

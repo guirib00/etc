@@ -494,7 +494,7 @@ button > a {
     outline: none;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     padding: 1rem 3rem;
-    margin: 1rem 0;
+    margin-bottom: 2rem;
     font-size: 1rem;
     border-radius: .5rem;
 }
@@ -560,11 +560,6 @@ button > a {
 .button-next {
     width: 18rem;
     font-size: 1.5rem;
-}
-
-input[type=date]{
-    margin-left: 2rem;
-    margin-right: auto;
 }
 .invisible {
     display: none;

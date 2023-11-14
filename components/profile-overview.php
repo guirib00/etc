@@ -1,3 +1,13 @@
+<?php
+// Verifica se o usuário está autenticado
+if (isset($_SESSION['account_name'])) {
+    $loggedIn = true;
+    $username = $_SESSION['account_name'];
+} else {
+    $loggedIn = false;
+}
+?>
+
 <main class="intro-container profile-container">
 
     <section class="intro-content font-medium-size text-black profile-section shadow third-gray-background">
@@ -10,7 +20,7 @@
 
         <aside class="profile-about">
 
-            <h2>Roberto Nogueira ✅☑️</h2>
+            <h2><?php echo "$username" ?></h2>
             <p>Bombeiro hidráulico e eletricista</p>
 
             <hr class="thin-line">

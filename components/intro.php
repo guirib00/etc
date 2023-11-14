@@ -6,7 +6,7 @@
 
     </section>
 
-    <section class="intro-content text-shadow  shadow">
+    <section class="intro-content text-shadow ">
 
         <h1>Construindo seu futuro</h1>
 
