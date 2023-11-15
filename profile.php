@@ -33,15 +33,16 @@
             CheckarPerfil("gu@gu.com");
         }
 
-    include("components/navbar-profile.php");
+    
 
     /* include("components/intro.php"); */
+    include("components/profile-connections.php");
 
     include("components/profile-overview.php");
 
+    include("components/navbar-profile.php");
+    
     /* include("components/app-ratings.php"); */
-
-    include("components/profile-connections.php");
 
     /* include("components/footer.php"); */
 

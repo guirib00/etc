@@ -8,7 +8,7 @@
         // Verificação de senhas
         if ($_POST['senha'] == $_POST['confirm_pass']) {
             if ($registerType == "trabalhador") {
-                CadastrarTrabalhador($_POST['nome'], $_POST['email'],$_POST['especializacao'], $_POST['login'], $_POST['senha']);
+                CadastrarTrabalhador($_POST['nome'], $_POST['email'],$_POST['foto'], $_POST['especializacao'], $_POST['sobre'], $_POST['cep'], $_POST['telefone'], $_POST['login'], $_POST['senha']);
             } elseif ($registerType == "contratante") {
                 CadastrarContratante($_POST['nome'], $_POST['email'], $_POST['login'], $_POST['senha']);
             }
@@ -44,23 +44,44 @@
             <!-- Parte 2 - Campos específicos do trabalhador -->
             <div id="camposTrabalhador" class="painel-area form-part" style="display: none;">
                 <!-- Campos específicos do trabalhador -->
-                <label for="nome"></label>Nome <br>
-                <input type="text" name="nome" placeholder="Digite seu nome" autofocus>
-                <br>
-                <label for="email"></label>Email <br>
-                <input type="email" class="form-control" name="email" placeholder="Digite seu email" required autocomplete="on"></input>
-                <br> 
-                <label for="especializacao"></label>Especialização <br>
-                <input type="text" class="form-control" name="especializacao" placeholder="Digite suas especializações" required autocomplete="on"></input>
-                <br> 
-                <label for="login"></label>Login <br>
-                <input type="text" name="login" placeholder="Digite seu login" required>
-                <br>
-                <label for="senha"></label>Senha <br>
-                <input type="password" name="senha" placeholder="Digite sua senha" required>
-                <br>
-                <label for="confirmar_senha"></label>Confirmar senha <br>
-                <input type="password" name="confirm_pass" placeholder="Confirmar senha" required>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <label for="nome"></label>Nome <br>
+                        <input type="text" name="nome" placeholder="Digite seu nome" autofocus>
+                    </div>
+                    <div class="grid-item2">
+                        <label for="email"></label>Email <br>
+                        <input type="email" class="form-control" name="email" placeholder="Digite seu email" required autocomplete="on"></input>
+                    </div>
+                    <div class="grid-item">
+                        <label for="especializacao"></label>Especialização <br>
+                        <input type="text" class="form-control" name="especializacao" placeholder="Digite sua especialização" required autocomplete="on"></input>
+                    </div>
+                    <div class="grid-item2">
+                        <label for="sobre"></label>Sobre<br>
+                        <input type="text" class="form-control" name="sobre" placeholder="digite sobre você" required autocomplete="on"></input>
+                    </div>
+                    <div class="grid-item">
+                        <label for="cep"></label>CEP <br>
+                        <input type="text" class="form-control" name="cep" placeholder="Digite seu CEP" required autocomplete="on"></input>
+                    </div>
+                    <div class="grid-item2">
+                        <label for="telefone"></label>Telefone <br>
+                        <input type="text" class="form-control" name="telefone" placeholder="Digite seu telefone" required autocomplete="on"></input>
+                    </div>
+                    <div class="grid-item">
+                        <label for="login"></label>Login <br>
+                        <input type="text" name="login" placeholder="Digite seu login" required>
+                    </div>
+                    <div class="grid-item2">
+                        <label for="senha"></label>Senha <br>
+                        <input type="password" name="senha" placeholder="Digite sua senha" required>
+                    </div>
+                    <div class="grid-item">
+                        <label for="confirmar_senha"></label>Confirmar senha <br>
+                        <input type="password" name="confirm_pass" placeholder="Confirmar senha" required>
+                    </div>
+                </div>
                 <?php if (!empty($erro)) : ?>
                     <p class="error-message text-center"><?php echo $erro; ?></p>
                 <?php endif; ?>
@@ -77,8 +98,8 @@
             <!-- Botões para navegação entre as partes -->
             <br><br>
             <div class="text-center invisible" id="login">Já tem uma conta? <a href="painel-login.php">Login</a></div>
-            <button type="button" onclick="submitForm()" id="cadastrar" class="button button-register shadow invisible"><a href="#">Cadastrar</a></button>
             <button type="button" id="return" class="button-return button-secondary button invisible" onclick="returnPart()">Voltar</button>
+            <button type="button" onclick="submitForm()" id="cadastrar" class="button button-register shadow invisible"><a href="#">Cadastrar</a></button>
         </form>
     </section>
 </section>

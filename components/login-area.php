@@ -14,9 +14,9 @@
 
 <section class="login-area">
 
-    <section class="painel-container white-background shadow">
+    <section class="painel-container-login white-background shadow">
 
-        <form class="painel-area" method="post">
+        <form class="painel-area-login" method="post">
 
             <aside class="rounded-circle">
                 <a href="index.php"> <img src="./views/images/main_logo_alt.png"> </a>
@@ -44,7 +44,7 @@
 
             <br>
 
-            <button class="button button-register shadow">Entrar</button>
+            <button class="button button-register shadow" style="margin: 0;">Entrar</button>
 
         </form>
 

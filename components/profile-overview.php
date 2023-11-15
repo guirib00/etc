@@ -4,6 +4,7 @@ if (isset($_SESSION['account_name'])) {
     $loggedIn = true;
     $username = $_SESSION['account_name'];
     $especializacao = $_SESSION['account_especializacao'];
+    $sobre = $_SESSION['account_sobre'];
 } else {
     $loggedIn = false;
 }
@@ -28,7 +29,7 @@ if (isset($_SESSION['account_name'])) {
 
             <p class="light text-justify">
 
-            Profissional dedicado e experiente em oferecer soluções hidráulicas e elétricas confiáveis para residências e empresas. Combinando habilidades técnicas sólidas com um compromisso com a segurança e a qualidade do serviço, estou pronto para enfrentar desafios complexos e entregar resultados excepcionais. Minha paixão por garantir ambientes seguros e funcionais impulsiona minha busca contínua por aprimorar meus conhecimentos e habilidades. 
+            <?php echo"$sobre"; ?>
 
             </p>
 
