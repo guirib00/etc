@@ -19,7 +19,12 @@
             
             <ul class="navbar-profile-links-logout">
             <hr class="thin-line">
-                <li><a href="./modules/logout.php">Sair</a></li>
+                <li><a onclick="logout()">Sair</a></li>
+
+                <div id ="saida" class="box1 invisible">
+                    <a href="./modules/logout.php">Confirmar</a>    
+                    <a onclick="cancel()">Cancelar</a>
+                </div>
 
             </ul>
 
@@ -28,3 +33,12 @@
     </section>
 
 </nav>
+
+<script>
+    function logout() {
+        document.getElementById('saida').classList.remove('invisible');
+    }
+    function cancel() {
+        document.getElementById('saida').classList.add('invisible');
+    }
+</script>

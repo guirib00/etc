@@ -3,6 +3,7 @@
 if (isset($_SESSION['account_name'])) {
     $loggedIn = true;
     $username = $_SESSION['account_name'];
+    $especializacao = $_SESSION['account_especializacao'];
 } else {
     $loggedIn = false;
 }
@@ -20,8 +21,8 @@ if (isset($_SESSION['account_name'])) {
 
         <aside class="profile-about">
 
-            <h2><?php echo "$username" ?></h2>
-            <p>Bombeiro hidráulico e eletricista</p>
+            <h2><?php echo "$username"; ?></h2>
+            <p><?php echo "$especializacao"; ?></p>
 
             <hr class="thin-line">
 

@@ -1,3 +1,12 @@
+<?php
+if (isset($_SESSION['account_name'])) {
+    $loggedIn = true;
+    $username = $_SESSION['account_name'];
+} else {
+    $loggedIn = false;
+}
+?>
+
 <main class="intro-container">
 
     <section class="intro-content second-gray-background services-content">
@@ -113,7 +122,15 @@
 
                 </h6>
 
-                <button class="button button-primary shadow"><a href="painel-cadastro.php">Crie uma conta</a></button>
+                <?php
+            if($loggedIn == false) { ?> 
+            <button class="button button-primary shadow visible"><a href="painel-cadastro.php">Crie uma conta</a></button>
+        <?php }?>
+
+        <?php
+            if($loggedIn == true) { ?>
+                  <button class="button button-primary shadow invisible"><a href="painel-cadastro.php">Crie uma conta</a></button>
+        <?php }?>
 
             </aside>
 

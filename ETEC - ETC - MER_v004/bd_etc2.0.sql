@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `bd_etc2.0`.`tb_trabalhadores` (
   `email_trabalhador` VARCHAR(60) NOT NULL,
   `img_perfil` VARCHAR(80) NULL,
   `vinculo_trabalhador` VARCHAR(30) NULL,
-  `sobre_trabalhador` VARCHAR(180) NULL,
+  `especializacao_trabalhador` VARCHAR(180) NULL,
   `escolaridade_trabalhador` INT NULL,
   `cep_trabalhador` VARCHAR(10) NULL,
   `tel_trabalhador` VARCHAR(20) NULL,

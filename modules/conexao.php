@@ -34,6 +34,7 @@ function Login($usuario, $senha) {
         $_SESSION['account_email'] = $u->email_trabalhador;
         $_SESSION['account_id'] = $u->id_trabalhador;
         $_SESSION['account_login'] = $u->login_trabalhador;
+        $_SESSION['account_especializacao'] = $u->especializacao_trabalhador;
         var_dump($_SESSION);
         header("location: index.php");
         return true; // Login trabalhador bem-sucedido
@@ -65,10 +66,10 @@ function Login($usuario, $senha) {
 }
 
 
-function CadastrarTrabalhador($nome, $email ,$usuario, $senha) {
+function CadastrarTrabalhador($nome, $email ,$especializacao, $usuario, $senha) {
 
-    $comando = 'INSERT INTO tb_trabalhadores (id_trabalhador, nome_trabalhador, login_trabalhador, senha_trabalhador,email_trabalhador, fk_plano)
-    VALUES (null, "'.$nome.'", "'.$usuario.'", "'.$senha.'","'.$email.'", null)';
+    $comando = 'INSERT INTO tb_trabalhadores (id_trabalhador, nome_trabalhador, login_trabalhador, senha_trabalhador,email_trabalhador, img_perfil, vinculo_trabalhador, especializacao_trabalhador)
+    VALUES (null, "'.$nome.'", "'.$usuario.'", "'.$senha.'","'.$email.'", null, null, "'.$especializacao.'")';
     $resultado = $GLOBALS['conn']->query($comando);
     
 	if($resultado){

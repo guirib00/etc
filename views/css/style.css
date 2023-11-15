@@ -618,3 +618,6 @@ button > a {
 .button-pefil important{
     padding: 0;
 }
+.box1{
+    position: relative;
+}

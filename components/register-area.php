@@ -1,12 +1,14 @@
 <?php
     // Se o formulário for enviado
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include('./modules/conexao.php');
+    $erro = "";
+    if ($_POST) {
         $registerType = $_POST['register_type'];
 
         // Verificação de senhas
         if ($_POST['senha'] == $_POST['confirm_pass']) {
             if ($registerType == "trabalhador") {
-                CadastrarTrabalhador($_POST['nome'], $_POST['email'], $_POST['login'], $_POST['senha']);
+                CadastrarTrabalhador($_POST['nome'], $_POST['email'],$_POST['especializacao'], $_POST['login'], $_POST['senha']);
             } elseif ($registerType == "contratante") {
                 CadastrarContratante($_POST['nome'], $_POST['email'], $_POST['login'], $_POST['senha']);
             }
@@ -48,6 +50,9 @@
                 <label for="email"></label>Email <br>
                 <input type="email" class="form-control" name="email" placeholder="Digite seu email" required autocomplete="on"></input>
                 <br> 
+                <label for="especializacao"></label>Especialização <br>
+                <input type="text" class="form-control" name="especializacao" placeholder="Digite suas especializações" required autocomplete="on"></input>
+                <br> 
                 <label for="login"></label>Login <br>
                 <input type="text" name="login" placeholder="Digite seu login" required>
                 <br>
@@ -72,7 +77,7 @@
             <!-- Botões para navegação entre as partes -->
             <br><br>
             <div class="text-center invisible" id="login">Já tem uma conta? <a href="painel-login.php">Login</a></div>
-            <button type="submit" id="cadastrar" class="button button-register shadow invisible">Cadastrar</button>
+            <button type="button" onclick="submitForm()" id="cadastrar" class="button button-register shadow invisible"><a href="#">Cadastrar</a></button>
             <button type="button" id="return" class="button-return button-secondary button invisible" onclick="returnPart()">Voltar</button>
         </form>
     </section>
@@ -101,6 +106,10 @@
             document.getElementById('cadastrar').classList.remove('invisible');
             document.getElementById('login').classList.remove('invisible');
         }
+    }
+
+    function submitForm() {
+        document.getElementById("completeForm").submit();
     }
 
     function returnPart() {
