@@ -716,3 +716,29 @@ input[type="file"] {
 #saida a:hover{
     background: #012331d8;
 }
+.dropdown-content {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 250px; /* Aumente o tamanho da caixa */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Estilo para o link de logout */
+#logoutLink {
+    display: block;
+    text-decoration: none;
+    background: #00131B;
+    padding: 8px 16px;
+    width: 50px;
+    margin: 50px 5px 5px 5px;
+    border-radius: 5px;
+}
+#logoutlink :hover{
+    background: #012331d8;
+}
