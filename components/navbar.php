@@ -23,9 +23,9 @@ var_dump($userType);
 
     <section class="navbar-links">
         <ul>
-            <li><a href="servicos.php">Serviços &#709;</a></li>
-            <li><a href="seguranca.php">Segurança &#709;</a></li>
-            <li><a href="suporte.php">Suporte &#709;</a></li>
+            <li><a href="servicos.php">Serviços</a></li>
+            <li><a href="seguranca.php">Segurança</a></li>
+            <li><a href="suporte.php">Suporte</a></li>
         </ul>
 
         <section class="navbar-login">
