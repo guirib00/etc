@@ -6,11 +6,26 @@
         $registerType = $_POST['register_type'];
 
         // Verificação de senhas
-        if ($_POST['senha'] == $_POST['confirm_pass']) {
+        if (($_POST['senha'] == $_POST['confirm_pass']) || ($_POST['senha'] == $_POST['confirm_pass'])) {
             if ($registerType == "trabalhador") {
-                CadastrarTrabalhador($_POST['nome'], $_POST['email'],$_POST['foto'], $_POST['especializacao'], $_POST['sobre'], $_POST['cep'], $_POST['telefone'], $_POST['login'], $_POST['senha']);
+                $nome = $_POST['nome'];
+                $login = $_POST['login'];
+                $senha = $_POST['senha'];
+                $email = $_POST['email'];
+                $especializacao = $_POST['especializacao'];
+                $sobre = $_POST['sobre'];
+                $cep = $_POST['cep'];
+                $telefone = $_POST['telefone'];
+                CadastrarTrabalhador($nome, $email, $especializacao, $sobre, $cep, $telefone, $login, $senha);
             } elseif ($registerType == "contratante") {
-                CadastrarContratante($_POST['nome'], $_POST['email'], $_POST['login'], $_POST['senha']);
+                $nome = $_POST['nome_cont'];
+                $login = $_POST['login_cont'];
+                $senha = $_POST['senha_cont'];
+                $email = $_POST['email_cont'];
+                $sobre = $_POST['sobre_cont'];
+                $cep = $_POST['cep_cont'];
+                $telefone = $_POST['telefone_cont'];
+                CadastrarContratante($nome, $email, $sobre, $cep, $telefone, $login, $senha);
             }
         } else {
             $erro = "As senhas são diferentes";
@@ -47,7 +62,7 @@
                 <div class="grid-container">
                     <div class="grid-item">
                         <label for="nome"></label>Nome <br>
-                        <input type="text" name="nome" placeholder="Digite seu nome" autofocus>
+                        <input type="text" name="nome" placeholder="Digite seu nome" autofocus></input>
                     </div>
                     <div class="grid-item2">
                         <label for="email"></label>Email <br>
@@ -90,9 +105,43 @@
             <!-- Parte 2 - Campos específicos do contratante -->
             <div id="camposContratante" class="painel-area form-part" style="display: none;">
                 <!-- Campos específicos do contratante -->
-                <label for="campoContratante"></label>
-                <input type="text" name="campoContratante" placeholder="Campo específico do contratante">
-                <br>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <label for="nome"></label>Nome <br>
+                        <input type="text" name="nome_cont" placeholder="Digite seu nome" autofocus>
+                    </div>
+                    <div class="grid-item2">
+                        <label for="email"></label>Email <br>
+                        <input type="email" class="form-control" name="email_cont" placeholder="Digite seu email" required autocomplete="on"></input>
+                    </div>
+                    <div class="grid-item">
+                        <label for="sobre"></label>Sobre<br>
+                        <input type="text" class="form-control" name="sobre_cont" placeholder="digite sobre você" required autocomplete="on"></input>
+                    </div>
+                    <div class="grid-item2">
+                        <label for="cep"></label>CEP <br>
+                        <input type="text" class="form-control" name="cep_cont" placeholder="Digite seu CEP" required autocomplete="on"></input>
+                    </div>
+                    <div class="grid-item">
+                        <label for="telefone"></label>Telefone <br>
+                        <input type="text" class="form-control" name="telefone_cont" placeholder="Digite seu telefone" required autocomplete="on"></input>
+                    </div>
+                    <div class="grid-item2">
+                        <label for="login"></label>Login <br>
+                        <input type="text" name="login_cont" placeholder="Digite seu login" required>
+                    </div>
+                    <div class="grid-item">
+                        <label for="senha"></label>Senha <br>
+                        <input type="password" name="senha_cont" placeholder="Digite sua senha" required>
+                    </div>
+                    <div class="grid-item2">
+                        <label for="confirmar_senha"></label>Confirmar senha <br>
+                        <input type="password" name="confirm_pass_cont" placeholder="Confirmar senha" required>
+                    </div>
+                </div>
+                <?php if (!empty($erro)) : ?>
+                    <p class="error-message text-center"><?php echo $erro; ?></p>
+                <?php endif; ?>
             </div>
 
             <!-- Botões para navegação entre as partes -->

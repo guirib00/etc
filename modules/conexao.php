@@ -67,15 +67,15 @@ function Login($usuario, $senha) {
 }
 
 
-function CadastrarTrabalhador($nome, $email ,$foto, $especializacao, $sobre, $post, $cep, $usuario, $senha, $tel) {
+function CadastrarTrabalhador($nome, $email, $especializacao, $sobre, $cep, $telefone, $login, $senha) {
 
-    $comando = 'INSERT INTO tb_trabalhadores (id_trabalhador, nome_trabalhador, login_trabalhador, senha_trabalhador,email_trabalhador, especializacao_trabalhador, sobre_trabalhador,escolaridade_trabalhador, cep_trabalhador, tel_trabalhador)
-    VALUES (null, "'.$nome.'", "'.$usuario.'", "'.$senha.'","'.$email.'", "'.$especializacao.'", "'.$sobre.'", null, "'.$cep.'", "'.$tel.'")';
+    $comando = 'INSERT INTO tb_trabalhadores (id_trabalhador, nome_trabalhador, login_trabalhador, senha_trabalhador, email_trabalhador, especializacao_trabalhador, sobre_trabalhador, escolaridade_trabalhador, cep_trabalhador, tel_trabalhador)
+    VALUES (null, "'.$nome.'", "'.$login.'", "'.$senha.'", "'.$email.'", "'.$especializacao.'", "'.$sobre.'", null, "'.$cep.'", "'.$telefone.'")';
     $resultado = $GLOBALS['conn']->query($comando);
     
 	if($resultado){
 		echo("Cadastrado.");
-        header('location: painel-login.php');
+        echo $comando;  
 	}
 
     else{
@@ -85,10 +85,10 @@ function CadastrarTrabalhador($nome, $email ,$foto, $especializacao, $sobre, $po
 
 }
 
-function CadastrarContratante($usuario, $senha) {
+function CadastrarContratante($nome, $email, $sobre, $cep, $telefone, $login, $senha) {
 
-    $comando = 'INSERT INTO tb_contratantes (id_contratante, nome_contratante, login_contratante, senha_contratante, email_contratante) 
-    VALUES (null, "'.$nome.'", "'.$usuario.'", "'.$senha.'","'.$email.'")';
+    $comando = 'INSERT INTO tb_contratantes (id_contratante, nome_contratante, login_contratante, senha_contratante, email_contratante, img_perfil, vinculo_contratante, sobre_contratante, cep_contratante, tel_contratante) 
+    VALUES (null, "'.$nome.'", "'.$login.'", "'.$senha.'", "'.$email.'", null, null, "'.$sobre.'", "'.$cep.'", "'.$telefone.'")';
     $resultado = $GLOBALS['conn']->query($comando);
 
 	if($resultado){
