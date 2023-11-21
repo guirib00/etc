@@ -36,6 +36,7 @@ function Login($usuario, $senha) {
         $_SESSION['account_sobre'] = $u->sobre_trabalhador;
         var_dump($_SESSION);
         header("location: index.php");
+        $_SESSION['type'] = 'trabalhador';
         return true; // Login trabalhador bem-sucedido
     }
 
@@ -56,7 +57,7 @@ function Login($usuario, $senha) {
         $_SESSION['account_email'] = $u->email_contratante;
         $_SESSION['account_id'] = $u->id_contratante;
         $_SESSION['account_login'] = $u->login_contratante;
-
+        $_SESSION['type'] = 'contratante';
         var_dump($_SESSION);
         header("location: index.php");
         return true; // Login contratante bem-sucedido
