@@ -5,7 +5,6 @@ $pass = 'usbw';
 $bd = 'bd_etc2.0';
 $server = 'localhost';
 
-
 $conn = new mysqli($server, $user, $pass, $bd);
 
 if ($conn->connect_error) {
@@ -17,8 +16,7 @@ function Login($usuario, $senha) {
 
     $usuario = $conn->real_escape_string($usuario);
 
-    //trabalhador
-
+    // Trabalhador
     $sql = 'SELECT * FROM tb_trabalhadores WHERE login_trabalhador = ? AND senha_trabalhador = ?';
     $stmt = $conn->prepare($sql);
 
@@ -41,8 +39,7 @@ function Login($usuario, $senha) {
         return true; // Login trabalhador bem-sucedido
     }
 
-    //Contratantes
-
+    // Contratantes
     $sql_contratantes = 'SELECT * FROM tb_contratantes WHERE login_contratante = ? AND senha_contratante = ?';
     $stmt_contratantes = $conn->prepare($sql_contratantes);
 
@@ -59,47 +56,40 @@ function Login($usuario, $senha) {
         $_SESSION['account_email'] = $u->email_contratante;
         $_SESSION['account_id'] = $u->id_contratante;
         $_SESSION['account_login'] = $u->login_contratante;
+
+        var_dump($_SESSION);
+        header("location: index.php");
         return true; // Login contratante bem-sucedido
     }
-    // else { //  
-        return false; // Usuário não encontrado
-    // } // 
+
+    return false; // Usuário não encontrado
 }
 
-
 function CadastrarTrabalhador($nome, $email, $especializacao, $sobre, $cep, $telefone, $login, $senha) {
-
     $comando = 'INSERT INTO tb_trabalhadores (id_trabalhador, nome_trabalhador, login_trabalhador, senha_trabalhador, email_trabalhador, especializacao_trabalhador, sobre_trabalhador, escolaridade_trabalhador, cep_trabalhador, tel_trabalhador)
     VALUES (null, "'.$nome.'", "'.$login.'", "'.$senha.'", "'.$email.'", "'.$especializacao.'", "'.$sobre.'", null, "'.$cep.'", "'.$telefone.'")';
     $resultado = $GLOBALS['conn']->query($comando);
     
-	if($resultado){
-		echo("Cadastrado.");
+    if ($resultado) {
+        echo("Cadastrado.");
         header('location: painel-login.php');
-	}
-
-    else{
-		echo("Falha ao cadastrar:".$resultado->error);
+    } else {
+        echo("Falha ao cadastrar:".$resultado->error);
         echo $comando;
-	}
-
+    }
 }
 
 function CadastrarContratante($nome, $email, $sobre, $cep, $telefone, $login, $senha) {
-
     $comando = 'INSERT INTO tb_contratantes (id_contratante, nome_contratante, login_contratante, senha_contratante, email_contratante, img_perfil, vinculo_contratante, sobre_contratante, cep_contratante, tel_contratante) 
     VALUES (null, "'.$nome.'", "'.$login.'", "'.$senha.'", "'.$email.'", null, null, "'.$sobre.'", "'.$cep.'", "'.$telefone.'")';
     $resultado = $GLOBALS['conn']->query($comando);
 
-	if($resultado){
-		echo("Cadastrado.");
+    if ($resultado) {
+        echo("Cadastrado.");
         header('location: painel-login.php');
-	}
-
-    else{
-		echo("Falha ao cadastrar:".$resultado->error);
-	}
-
+    } else {
+        echo("Falha ao cadastrar:".$resultado->error);
+    }
 }
 
 function CheckarPerfil($login) {
@@ -109,7 +99,7 @@ function CheckarPerfil($login) {
 
     $resultado = $GLOBALS['conn']->query($comando);
 
-    if($resultado){
+    if ($resultado) {
         $stmt = $resultado->fetch_array();
         // var_dump($stmt);
         $user_id = $stmt[0];
@@ -117,6 +107,5 @@ function CheckarPerfil($login) {
         $user_email = $stmt[2];
         $user_plan = $stmt[4];
     }
-
 }
 ?>
