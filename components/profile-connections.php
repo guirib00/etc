@@ -10,11 +10,11 @@
                 <hr class="thin-line">
             </aside>
 
-                <li><a href="index.php" class="shadow"><img class="shadow" src="./views/images/guilherme-ribeiro-rating.jfif">Guilherme Souza</a></li>
+                <li><a href="index.php" class="shadow"><img class="shadow" src="./views/images/construtor-3.png">Guilherme Souza</a></li>
                 <hr class="thin-line">
-                <li><a href="profile.php" class="shadow"><img class="shadow" src="./views/images/vitor-duarte-rating.jfif">Vitor Duarte</a></li>
+                <li><a href="profile.php" class="shadow"><img class="shadow" src="./views/images/construtor-1.jpg">Vitor Duarte</a></li>
                 <hr class="thin-line">
-                <li><a href="#" class="shadow"><img class="shadow" src="./views/images/myselff.jpg">Matheus Mariano</a></li>
+                <li><a href="#" class="shadow"><img class="shadow" src="./views/images/construtor-2.png">Matheus Mariano</a></li>
 
             </ul>
 
