@@ -17,7 +17,7 @@
 
                 <div id="blur-overlay"></div>
                 <div id="saida" class="box1 invisible">
-                    <h1>Quer sair Sair?</h1>
+                    <h1>Quer mesmo sair Sair?</h1>
                     <a href="./modules/logout.php">Confirmar</a>    
                     <a onclick="cancel()">Cancelar</a>
                 </div>
