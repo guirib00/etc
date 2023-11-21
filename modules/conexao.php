@@ -75,7 +75,7 @@ function CadastrarTrabalhador($nome, $email, $especializacao, $sobre, $cep, $tel
     
 	if($resultado){
 		echo("Cadastrado.");
-        echo $comando;  
+        header('location: painel-login.php');
 	}
 
     else{
