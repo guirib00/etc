@@ -4,7 +4,7 @@
         <section class="app-rating shadow">
 
             <aside class="app-rating-picture">
-                <img src="./views/images/vitor-duarte-rating.jfif" alt="Vitor Duarte da Gama">
+                <img src="./views/images/construtor-1.jpg" alt="Construtor 1">
             </aside>
 
             <aside class="app-rating-title">
@@ -38,7 +38,7 @@
         <section class="app-rating shadow">
 
             <aside class="app-rating-picture">
-                <img src="./views/images/myselff.jpg" alt="Matheus S. Mariano">
+                <img src="./views/images/construtor-2.png" alt="Construtor 2">
             </aside>
 
             <aside class="app-rating-title">
@@ -73,7 +73,7 @@
         <section class="app-rating shadow">
 
             <aside class="app-rating-picture">
-                <img src="./views/images/guilherme-ribeiro-rating.jfif" alt="Guilherme Ribeiro Souza">
+                <img src="./views/images/construtor-3.png" alt="construtor 3">
             </aside>
 
             <aside class="app-rating-title">

@@ -30,7 +30,7 @@ if (isset($_SESSION['account_name'])) {
             <section class="app-rating shadow app-rating-services" style="margin-left: auto;">
 
                 <aside class="app-rating-picture">
-                    <img src="./views/images/guilherme-ribeiro-rating.jfif" alt="Guilherme Ribeiro Souza">
+                    <img src="./views/images/construtor-3.png" alt="Guilherme Ribeiro Souza">
                 </aside>
 
                 <aside class="app-rating-title">
@@ -77,7 +77,7 @@ if (isset($_SESSION['account_name'])) {
             <section class="app-rating shadow app-rating-services">
 
                 <aside class="app-rating-picture">
-                    <img src="./views/images/myselff.jpg" alt="Matheus S. Mariano">
+                    <img src="./views/images/construtor-2.png" alt="Matheus S. Mariano">
                 </aside>
 
                 <aside class="app-rating-title">
