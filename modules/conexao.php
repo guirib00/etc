@@ -34,8 +34,8 @@ function Login($usuario, $senha) {
         $_SESSION['account_login'] = $u->login_trabalhador;
         $_SESSION['account_especializacao'] = $u->especializacao_trabalhador;
         $_SESSION['account_sobre'] = $u->sobre_trabalhador;
-        var_dump($_SESSION);
         header("location: index.php");
+        var_dump($_SESSION);
         $_SESSION['type'] = 'trabalhador';
         return true; // Login trabalhador bem-sucedido
     }
@@ -58,8 +58,9 @@ function Login($usuario, $senha) {
         $_SESSION['account_id'] = $u->id_contratante;
         $_SESSION['account_login'] = $u->login_contratante;
         $_SESSION['type'] = 'contratante';
-        var_dump($_SESSION);
+        
         header("location: index.php");
+        var_dump($_SESSION);
         return true; // Login contratante bem-sucedido
     }
 
@@ -110,3 +111,21 @@ function CheckarPerfil($login) {
     }
 }
 ?>
+
+
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget({
+      rootPah: '/app',
+      personalization: 'https://vlibras.gov.br/config/default_logo.json',
+      opacity: 0.5,
+      position: 'L',
+      avatar: 'random',
+  });
+</script>
