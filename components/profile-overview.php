@@ -34,12 +34,13 @@ if (isset($_SESSION['account_name'])) {
 
             </p>
 
-        </aside>
+            <br>
 
-        <hr class="thin-line">
+            
+        </aside>
         
             <p>
-                <strong> Perfil muito bem avaliado na plataforma com: <span class="text-yellow">278</span> avaliações!</strong>
+                <strong> Perfil muito bem avaliado na plataforma com: <span class="text-yellow">0</span> avaliações!</strong>
             </p>
 
         </section>

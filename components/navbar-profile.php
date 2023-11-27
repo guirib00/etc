@@ -6,6 +6,7 @@
         <section class="navbar-links navbar-profile-links">
             <ul class="third-gray-background">
                 <li><a href="index.php" class="shadow">Pagina Inicial</a></li>
+                <li><a href="jobs.php" class="shadow">Trabalhos</a></li>
                 <li><a href="profile.php" class="shadow button-active">Perfil</a></li>
                 <li><a href="#.php" class="shadow">Conexões</a></li>
                 <li><a href="#" class="shadow">Histórico</a></li>

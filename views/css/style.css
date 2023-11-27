@@ -760,3 +760,74 @@ button > a {
 .grid-item input[type="file"]:hover {
     background-color: #e0e0e0; /* Altera a cor de fundo ao passar o mouse sobre o botão */
 }
+.jobs-container{
+    margin: 1.5rem auto;
+    padding: 0.5rem;
+    width: 70rem;
+    min-height: 30rem;
+    border-radius: 2rem;
+}
+.h1-services{
+    margin-left: 6rem;
+    font-size: 25px;
+}
+.line-jobs{
+    margin-left: 4rem;
+    height: 0.25rem;
+    margin-top: -1rem;
+    width: 25rem;
+    background-color: #000;
+}
+.grid-job{
+    padding: 1rem;
+    width: 60rem;
+    height: 7rem;
+    margin-left: auto;
+    margin-right: auto;
+    grid-row: auto;
+    display: flex;
+}
+.circle-job img{
+    width: 7rem;
+    height: 7rem;
+    border-radius: 25%;
+    border: 0.5px solid black;
+}
+.description-job{
+    padding: 0;
+    margin-left: 1rem;
+}
+.title-job{
+    display: flex;
+    color: #006992;
+    font-size: 1.25rem;
+}
+.contractor{
+    margin-top: -1.5rem;
+}
+.place{
+    margin-top: -1.25rem;
+    color: #676767;
+}
+.text-pointer:hover{
+    cursor: pointer;    
+}
+.container2 {
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    height: 150vh;
+}
+.intro-source{
+    margin: 1.5rem auto;
+    padding: 0.5rem;
+    width: 70rem;
+    height: 3rem;
+    border-radius: 2rem;
+}
+.source{
+    margin-top: -1.5rem;
+    margin-left: 0.5rem;
+    font-size: 20px;
+}

@@ -126,7 +126,7 @@ function CheckarPerfil($login) {
       rootPah: '/app',
       personalization: 'https://vlibras.gov.br/config/default_logo.json',
       opacity: 0.5,
-      position: 'L',
+      position: 'R',
       avatar: 'random',
   });
 </script>

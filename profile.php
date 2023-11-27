@@ -3,6 +3,7 @@
 <head>
 
     <?php
+        include("modules/conexao.php");
 
         include("modules/meta.php");
 
@@ -26,12 +27,7 @@
 
     <?php
 
-    if($_GET) {
 
-        if($_GET['id']) {
-            include('./modules/conexao.php');
-            CheckarPerfil("gu@gu.com");
-        }
 
     
 
@@ -46,9 +42,6 @@
 
     /* include("components/footer.php"); */
 
-    } else {
-    header("location: index.php");    
-    }
 
     ?>
 
