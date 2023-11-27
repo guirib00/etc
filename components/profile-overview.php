@@ -5,6 +5,7 @@ if (isset($_SESSION['account_name'])) {
     $username = $_SESSION['account_name'];
     $especializacao = $_SESSION['account_especializacao'];
     $sobre = $_SESSION['account_sobre'];
+    $destino = $_SESSION['account_imagem'];
 } else {
     $loggedIn = false;
 }
@@ -15,7 +16,7 @@ if (isset($_SESSION['account_name'])) {
     <section class="intro-content font-medium-size text-black profile-section shadow third-gray-background">
 
         <aside class="profile-image">
-            <img class="shadow" src="./views/images/roberto-nogueira.png">
+            <img class="shadow" src="<?php echo "$destino"; ?>">
         </aside>
 
         <section class="profile-content">

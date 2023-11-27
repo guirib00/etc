@@ -34,6 +34,7 @@ function Login($usuario, $senha) {
         $_SESSION['account_login'] = $u->login_trabalhador;
         $_SESSION['account_especializacao'] = $u->especializacao_trabalhador;
         $_SESSION['account_sobre'] = $u->sobre_trabalhador;
+        $_SESSION['account_imagem'] = $u->imagem_trabalhador;
         header("location: index.php");
         var_dump($_SESSION);
         $_SESSION['type'] = 'trabalhador';
@@ -67,14 +68,14 @@ function Login($usuario, $senha) {
     return false; // Usuário não encontrado
 }
 
-function CadastrarTrabalhador($nome, $email, $especializacao, $sobre, $cep, $telefone, $login, $senha) {
-    $comando = 'INSERT INTO tb_trabalhadores (id_trabalhador, nome_trabalhador, login_trabalhador, senha_trabalhador, email_trabalhador, especializacao_trabalhador, sobre_trabalhador, escolaridade_trabalhador, cep_trabalhador, tel_trabalhador)
-    VALUES (null, "'.$nome.'", "'.$login.'", "'.$senha.'", "'.$email.'", "'.$especializacao.'", "'.$sobre.'", null, "'.$cep.'", "'.$telefone.'")';
+function CadastrarTrabalhador($nome, $email, $especializacao, $sobre, $cep, $telefone, $login, $senha, $destino) {
+    $comando = 'INSERT INTO tb_trabalhadores (id_trabalhador, nome_trabalhador, login_trabalhador, senha_trabalhador, email_trabalhador,imagem_trabalhador, especializacao_trabalhador, sobre_trabalhador, escolaridade_trabalhador, cep_trabalhador, tel_trabalhador)
+    VALUES (null, "'.$nome.'", "'.$login.'", "'.$senha.'", "'.$email.'","'.$destino.'", "'.$especializacao.'", "'.$sobre.'", null, "'.$cep.'", "'.$telefone.'")';
     $resultado = $GLOBALS['conn']->query($comando);
     
     if ($resultado) {
         echo("Cadastrado.");
-        header('location: painel-login.php');
+        header("location: painel-login.php");
     } else {
         echo("Falha ao cadastrar:".$resultado->error);
         echo $comando;

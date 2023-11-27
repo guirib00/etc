@@ -535,8 +535,9 @@ button > a {
 }
 
 .profile-image img {
-    max-width: 12rem;
-    border-radius: 12rem;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
 }
 
 .profile-section {
@@ -671,10 +672,6 @@ button > a {
     border-radius: 4px;
     cursor: pointer;
 }
-/* Esconda o texto original do input file */
-input[type="file"] {
-    display: none;
-}
 #blur-overlay {
     position: fixed;
     top: 0;
@@ -741,4 +738,25 @@ input[type="file"] {
 }
 #logoutlink :hover{
     background: #012331d8;
+}
+/* Estilos para o campo de escolha de imagem */
+.grid-item label {
+    font-size: 14px; /* Reduz o tamanho do texto ao lado do campo de imagem */
+    margin-bottom: 5px; /* Adiciona um pequeno espaçamento abaixo do texto */
+    display: block;
+}
+
+.grid-item input[type="file"] {
+    /* Estilos para o botão de escolher a imagem */
+    padding: 8px 12px; /* Adiciona espaçamento interno ao botão */
+    border: 1px solid #ccc; /* Adiciona uma borda ao redor do botão */
+    border-radius: 4px; /* Adiciona bordas arredondadas ao botão */
+    background-color: #f5f5f5; /* Define uma cor de fundo para o botão */
+    color: #333; /* Define a cor do texto do botão */
+    cursor: pointer; /* Altera o cursor para indicar que é clicável */
+    width: 16.5rem;
+}
+
+.grid-item input[type="file"]:hover {
+    background-color: #e0e0e0; /* Altera a cor de fundo ao passar o mouse sobre o botão */
 }

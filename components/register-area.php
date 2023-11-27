@@ -2,6 +2,7 @@
     // Se o formulário for enviado
     include('./modules/conexao.php');
     $erro = "";
+    
     if ($_POST) {
         $registerType = $_POST['register_type'];
 
@@ -15,8 +16,11 @@
                 $especializacao = $_POST['especializacao'];
                 $sobre = $_POST['sobre'];
                 $cep = $_POST['cep'];
-                $telefone = $_POST['telefone'];
-                CadastrarTrabalhador($nome, $email, $especializacao, $sobre, $cep, $telefone, $login, $senha);
+                $telefone = $_POST['telefone'];  
+                $arquivo = $_FILES['arq'];
+                $destino = 'docs/' . $arquivo['name'];
+                move_uploaded_file($_FILES['arq']['tmp_name'], $destino);
+                CadastrarTrabalhador($nome, $email, $especializacao, $sobre, $cep, $telefone, $login, $senha, $destino);
             } elseif ($registerType == "contratante") {
                 $nome = $_POST['nome_cont'];
                 $login = $_POST['login_cont'];
@@ -35,7 +39,7 @@
 
 <section class="register-area">
     <section class="painel-container white-background shadow">
-        <form id="completeForm" method="post">
+        <form id="completeForm" method="post" enctype="multipart/form-data">
             <aside class="rounded-circle">
                 <a href="index.php"> <img src=" ./views/images/main_logo_alt.png"> </a>
             </aside>
@@ -69,30 +73,34 @@
                         <input type="email" class="form-control" name="email" placeholder="Digite seu email" required autocomplete="on"></input>
                     </div>
                     <div class="grid-item">
+                        <label for="imagem"></label>Imagem <br>
+                        <input type="file" name="arq">
+                    </div>
+                    <div class="grid-item2">
                         <label for="especializacao"></label>Especialização <br>
                         <input type="text" class="form-control" name="especializacao" placeholder="Digite sua especialização" required autocomplete="on"></input>
                     </div>
-                    <div class="grid-item2">
-                        <label for="sobre"></label>Sobre<br>
-                        <input type="text" class="form-control" name="sobre" placeholder="digite sobre você" required autocomplete="on"></input>
-                    </div>
                     <div class="grid-item">
-                        <label for="cep"></label>CEP <br>
+                        <label for="sobre"></label>Sobre<br>
+                        <input type="text" class="form-control" name="sobre" placeholder="Digite sobre você" required autocomplete="on"></input>
+                    </div>
+                    <div class="grid-item2">
+                        <label for="cep"></label>CEP<br>
                         <input type="text" class="form-control" name="cep" placeholder="Digite seu CEP" required autocomplete="on"></input>
                     </div>
-                    <div class="grid-item2">
+                    <div class="grid-item">
                         <label for="telefone"></label>Telefone <br>
                         <input type="text" class="form-control" name="telefone" placeholder="Digite seu telefone" required autocomplete="on"></input>
                     </div>
-                    <div class="grid-item">
+                    <div class="grid-item2">
                         <label for="login"></label>Login <br>
                         <input type="text" name="login" placeholder="Digite seu login" required>
                     </div>
-                    <div class="grid-item2">
+                    <div class="grid-item">
                         <label for="senha"></label>Senha <br>
                         <input type="password" name="senha" placeholder="Digite sua senha" required>
                     </div>
-                    <div class="grid-item">
+                    <div class="grid-item2">
                         <label for="confirmar_senha"></label>Confirmar senha <br>
                         <input type="password" name="confirm_pass" placeholder="Confirmar senha" required>
                     </div>
