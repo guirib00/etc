@@ -1,5 +1,5 @@
-<main class="intro-container ">
-<section class="intro-source font-medium-size text-black third-gray-background">
+<main class="intro-container">
+<section class="intro-source font-medium-size shadow text-black third-gray-background">
     <div class="search-icon" style="display: inline-block; vertical-align: middle; margin-left: 4rem;">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
@@ -16,7 +16,7 @@
 
 
 
-    <section class="jobs-container font-medium-size text-black third-gray-background">
+    <section class="jobs-container font-medium-size text-black third-gray-background shadow">
 
            <h1 class="h1-services">Serviços recomendados</h1>
            <hr class="line-jobs">
@@ -85,7 +85,7 @@
 
 
     </section>
-    <section class="jobs-container font-medium-size text-black third-gray-background">
+    <section class="jobs-container font-medium-size text-black third-gray-background shadow">
 
            <h1 class="h1-services">Serviços mais recentes</h1>
            <hr class="line-jobs">

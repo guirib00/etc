@@ -23,7 +23,7 @@
 
 <body>
 
-<section class="container second-gray-background">
+<section class="container second-gray-background height-full">
 
     <?php
 
@@ -37,6 +37,8 @@
     include("components/profile-overview.php");
 
     include("components/navbar-profile.php");
+
+    include("components/profile-lastjobs.php");
     
     /* include("components/app-ratings.php"); */
 

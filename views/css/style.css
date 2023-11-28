@@ -128,6 +128,10 @@ button a {
     padding: 0.5rem 1.5rem;
 }
 
+.navbar-ads img {
+    max-width: 22rem;
+}
+
 .intro-content {
     position: relative;
     text-align: left;
@@ -138,6 +142,10 @@ button a {
     margin: 1.5rem auto;
     font-size: 2.625rem;
     color: #fff;
+}
+
+.font-small-size {
+    font-size: .75rem;
 }
 
 .font-medium-size {
@@ -229,10 +237,10 @@ button a {
 
 .navbar-profile-links ul {
     display: block;
-    margin-top: 4.5rem;
+    margin-top: 5rem;
     margin-bottom: 0;
     padding-left: 0;
-    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .navbar-connections .navbar-profile-links ul {
@@ -250,11 +258,13 @@ button a {
     justify-content: space-around;
     padding-left: 1rem;
     padding-right: 1rem;
+    margin-right: 1rem;
 }
 
 .navbar-connections .navbar-profile-links ul li a img {
-    max-width: 3rem;
+    max-width: 4rem;
     border-radius: 2rem;
+    aspect-ratio: 1;
 }
 
 .connections-header {
@@ -476,6 +486,14 @@ button > a {
     color: #DAA520;
 }
 
+.height-full {
+    height: 100%;
+}
+
+.width-full {
+    width: 100%;
+}
+
 .painel-container {
     max-width: 45rem;
     display: flex;
@@ -535,13 +553,36 @@ button > a {
 }
 
 .profile-image img {
-    width: 12rem;
-    height: 12rem;
-    border-radius: 50%;
+    max-width: 12rem;
+    border-radius: 12rem;
+}
+
+.lastjob-image img {
+    max-width: 6rem;
+    max-height: 6rem;
+    border-radius: 20rem;
+    aspect-ratio: .75;
 }
 
 .profile-section {
     position: relative;    
+}
+
+.lastjob-about {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+}
+
+.lastjob-about a {
+    text-decoration: none;
+}
+
+.lastjob-align {
+    display: flex;
+    flex-direction: column;
+    margin-left: 6rem;
+    margin-top: -7rem;
+    margin-bottom: .25rem;
 }
 
 .profile-container {
@@ -763,7 +804,7 @@ button > a {
 .jobs-container{
     margin: 1.5rem auto;
     padding: 0.5rem;
-    width: 70rem;
+    max-width: 70rem;
     min-height: 30rem;
     border-radius: 2rem;
 }
@@ -786,12 +827,14 @@ button > a {
     margin-right: auto;
     grid-row: auto;
     display: flex;
+    margin-bottom: 2rem;
+    margin-top: 1.5rem;
 }
 .circle-job img{
     width: 7rem;
     height: 7rem;
     border-radius: 25%;
-    border: 0.5px solid black;
+    border: 0.5px solid rgba(0, 0, 0, .1);
 }
 .description-job{
     padding: 0;
@@ -817,7 +860,6 @@ button > a {
     margin-left: auto;
     display: flex;
     flex-direction: column;
-    height: 150vh;
 }
 .intro-source{
     margin: 1.5rem auto;

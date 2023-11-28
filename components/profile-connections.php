@@ -22,4 +22,8 @@
 
     </section>
 
+    <section class="navbar-ads">
+        <img class="shadow" src="./views/images/ads/coca-cola-ads-one.jpg">
+    </section>
+
 </nav>

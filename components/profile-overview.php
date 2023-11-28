@@ -28,7 +28,7 @@ if (isset($_SESSION['account_name'])) {
 
             <hr class="thin-line">
 
-            <p class="light text-justify">
+            <p class="light font-small-size text-justify">
 
             <?php echo"$sobre"; ?>
 
