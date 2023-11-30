@@ -24,7 +24,7 @@
 
 <body>
 
-<section class="container second-gray-background">
+<section class="container2 second-gray-background">
 
     <?php
 
