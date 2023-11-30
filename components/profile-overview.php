@@ -23,7 +23,7 @@ if (isset($_SESSION['account_name'])) {
 
         <aside class="profile-about">
 
-            <h2><?php echo "$username"; ?></h2>
+            <h2 style="margin-top: 4rem;"><?php echo "$username"; ?></h2>
             <p><?php echo "$especializacao"; ?></p>
 
             <hr class="thin-line">

@@ -46,7 +46,7 @@
                     <img src="./views/images/construtor-2.png" alt="imagem contratante">
                 </div>
                 <div class="description-job">
-                    <div class="title-job">
+                    <div class="title-job text-pointer">
                         <p>Reforma da sala de reuniões</p>
                     </div>
                     <div class="contractor">
@@ -66,7 +66,7 @@
                     <img src="./views/images/construtor-3.png" alt="imagem contratante">
                 </div>
                 <div class="description-job">
-                    <div class="title-job">
+                    <div class="title-job text-pointer">
                         <p>Reforma da sala de reuniões</p>
                     </div>
                     <div class="contractor">
@@ -96,7 +96,7 @@
                     <img src="./views/images/construtor-1.jpg" alt="imagem contratante">
                 </div>
                 <div class="description-job">
-                    <div class="title-job">
+                    <div class="title-job text-pointer">
                         <p>Reforma da sala de reuniões</p>
                     </div>
                     <div class="contractor">
@@ -115,7 +115,7 @@
                     <img src="./views/images/construtor-2.png" alt="imagem contratante">
                 </div>
                 <div class="description-job">
-                    <div class="title-job">
+                    <div class="title-job text-pointer">
                         <p>Reforma da sala de reuniões</p>
                     </div>
                     <div class="contractor">
@@ -135,7 +135,7 @@
                     <img src="./views/images/construtor-3.png" alt="imagem contratante">
                 </div>
                 <div class="description-job">
-                    <div class="title-job">
+                    <div class="title-job text-pointer">
                         <p>Reforma da sala de reuniões</p>
                     </div>
                     <div class="contractor">

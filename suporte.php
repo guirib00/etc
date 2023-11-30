@@ -6,19 +6,18 @@
 <script src="./views/js/questions-suporte.js"></script>
 
     <?php
-
+        include("views/favicon.php");
+        
         include("modules/conexao.php");
 
         include("modules/meta.php");
 
-        include("views/favicon.php");
 
         include("views/fonts.php");
         
         include("views/styles.php");
 
         include("modules/scripts.php");
-
     ?>
 
     <title>ETC - Eu Também Construo</title>

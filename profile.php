@@ -3,11 +3,12 @@
 <head>
 
     <?php
+        include("views/favicon.php");
+        
         include("modules/conexao.php");
 
         include("modules/meta.php");
 
-        include("views/favicon.php");
 
         include("views/fonts.php");
         

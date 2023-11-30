@@ -15,7 +15,6 @@
         include("views/styles.php");
 
         include("modules/scripts.php");
-
     ?>
 
     <title>ETC - Eu Também Construo</title>
@@ -23,18 +22,25 @@
 </head>
 
 <body>
-    
-<section class="container">
+
+<section class="container2 second-gray-background">
 
     <?php
 
-    include("components/navbar.php");
 
-    include("components/intro.php");
+    
 
-    include("components/app-ratings.php");
+    /* include("components/intro.php"); */
+    include("components/profile-connections.php");
 
-    include("components/footer.php");
+    include("components/area-trabalho.php");
+
+    include("components/navbar-profile.php");
+    
+    /* include("components/app-ratings.php"); */
+
+    /* include("components/footer.php"); */
+
 
     ?>
 

@@ -82,9 +82,9 @@ function CadastrarTrabalhador($nome, $email, $especializacao, $sobre, $cep, $tel
     }
 }
 
-function CadastrarContratante($nome, $email, $sobre, $cep, $telefone, $login, $senha) {
+function CadastrarContratante($nome, $email, $sobre, $cep, $telefone, $login, $senha, $destino) {
     $comando = 'INSERT INTO tb_contratantes (id_contratante, nome_contratante, login_contratante, senha_contratante, email_contratante, img_perfil, vinculo_contratante, sobre_contratante, cep_contratante, tel_contratante) 
-    VALUES (null, "'.$nome.'", "'.$login.'", "'.$senha.'", "'.$email.'", null, null, "'.$sobre.'", "'.$cep.'", "'.$telefone.'")';
+    VALUES (null, "'.$nome.'", "'.$login.'", "'.$senha.'", "'.$email.'", "'.$destino.'", null, "'.$sobre.'", "'.$cep.'", "'.$telefone.'")';
     $resultado = $GLOBALS['conn']->query($comando);
 
     if ($resultado) {

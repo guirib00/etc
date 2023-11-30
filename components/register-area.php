@@ -29,7 +29,10 @@
                 $sobre = $_POST['sobre_cont'];
                 $cep = $_POST['cep_cont'];
                 $telefone = $_POST['telefone_cont'];
-                CadastrarContratante($nome, $email, $sobre, $cep, $telefone, $login, $senha);
+                $arquivo = $_FILES['arq_cont'];
+                $destino = 'docs/' . $arquivo['name'];
+                move_uploaded_file($_FILES['arq_cont']['tmp_name'], $destino);
+                CadastrarContratante($nome, $email, $sobre, $cep, $telefone, $login, $senha, $destino);
             }
         } else {
             $erro = "As senhas são diferentes";
@@ -123,26 +126,30 @@
                         <input type="email" class="form-control" name="email_cont" placeholder="Digite seu email" required autocomplete="on"></input>
                     </div>
                     <div class="grid-item">
+                        <label for="imagem"></label>Imagem <br>
+                        <input type="file" name="arq_cont">
+                    </div>
+                    <div class="grid-item2">
                         <label for="sobre"></label>Sobre<br>
                         <input type="text" class="form-control" name="sobre_cont" placeholder="digite sobre você" required autocomplete="on"></input>
                     </div>
-                    <div class="grid-item2">
+                    <div class="grid-item">
                         <label for="cep"></label>CEP <br>
                         <input type="text" class="form-control" name="cep_cont" placeholder="Digite seu CEP" required autocomplete="on"></input>
                     </div>
-                    <div class="grid-item">
+                    <div class="grid-item2">
                         <label for="telefone"></label>Telefone <br>
                         <input type="text" class="form-control" name="telefone_cont" placeholder="Digite seu telefone" required autocomplete="on"></input>
                     </div>
-                    <div class="grid-item2">
+                    <div class="grid-item">
                         <label for="login"></label>Login <br>
                         <input type="text" name="login_cont" placeholder="Digite seu login" required>
                     </div>
-                    <div class="grid-item">
+                    <div class="grid-item2">
                         <label for="senha"></label>Senha <br>
                         <input type="password" name="senha_cont" placeholder="Digite sua senha" required>
                     </div>
-                    <div class="grid-item2">
+                    <div class="grid-item">
                         <label for="confirmar_senha"></label>Confirmar senha <br>
                         <input type="password" name="confirm_pass_cont" placeholder="Confirmar senha" required>
                     </div>

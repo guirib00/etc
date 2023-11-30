@@ -873,3 +873,14 @@ button > a {
     margin-left: 0.5rem;
     font-size: 20px;
 }
+.grid-trabalho{
+    padding: 1rem;
+    max-width: 35rem;
+    height: 7rem;
+    margin-left: auto;
+    margin-right: auto;
+    grid-row: auto;
+    display: flex;
+    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+}

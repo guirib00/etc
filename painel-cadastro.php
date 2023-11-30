@@ -5,10 +5,11 @@
 <script src="./views/js/navegacao-cadastro.js"></script>
 
     <?php
+        include("views/favicon.php");
+        
 
         include("modules/meta.php");
 
-        include("views/favicon.php");
 
         include("views/fonts.php");
         
