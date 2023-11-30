@@ -27,8 +27,8 @@
                     <img src="./views/images/construtor-1.jpg" alt="imagem contratante">
                 </div>
                 <div class="description-job">
-                    <div class="title-job text-pointer">
-                        <p>Reforma da sala de reuniões</p>
+                    <div class="title-job">
+                        <a href="trabalho.php"><p>Reforma da sala de reuniões</p></a>
                     </div>
                     <div class="contractor">
                         <p>Company</p>

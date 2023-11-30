@@ -72,7 +72,6 @@ button a {
 .third-gray-background {
     background: #E6E6E6 !important;
 }
-
 .blue-background {
     background: #006992;
 }
@@ -845,6 +844,10 @@ button > a {
     color: #006992;
     font-size: 1.25rem;
 }
+.title-job a{
+    text-decoration: none;
+    color: #006992;
+}
 .contractor{
     margin-top: -1.5rem;
 }
@@ -861,6 +864,13 @@ button > a {
     display: flex;
     flex-direction: column;
 }
+.container3 {
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 58.20rem;
+}
 .intro-source{
     margin: 1.5rem auto;
     padding: 0.5rem;
@@ -875,12 +885,39 @@ button > a {
 }
 .grid-trabalho{
     padding: 1rem;
-    max-width: 35rem;
+    max-width: 40rem;
     height: 7rem;
     margin-left: auto;
     margin-right: auto;
     grid-row: auto;
     display: flex;
-    margin-bottom: 2rem;
-    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+}
+.description-trabalho{
+    margin-top: -2.2rem;
+    padding: 0;
+    margin-left: 1rem;
+}
+.title-trabalho{
+    font-size: 2rem;
+    display: flex;
+}
+.description-service{
+    padding: 1rem;
+    max-width: 40rem;
+    height: 7rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.description-service h2{
+    margin-top: -1.25rem;
+}
+.enunciado-service{
+    margin-top: -1rem;
+}
+.enunciado-service p{
+    text-align: left;
+}
+.dados-service h1{
+    font-size: 1.75rem;
 }

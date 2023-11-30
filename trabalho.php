@@ -23,7 +23,7 @@
 
 <body>
 
-<section class="container2 second-gray-background">
+<section class="container3 second-gray-background">
 
     <?php
 
