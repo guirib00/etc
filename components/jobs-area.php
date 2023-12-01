@@ -46,6 +46,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
+        $id_servico = $row['id_servico'];
         $nome_service = $row['nome_servico'];
         $categoria_service = $row['categoria_servico'];
         $endereco_service = $row['endereco_servico'];
@@ -65,7 +66,7 @@ if ($result->num_rows > 0) {
             echo "</div>";
             echo "<div class='description-job'>";
             echo "<div class='title-job'>";
-            echo "<a href='trabalho.php'><p>$nome_service</p></a>";
+            echo "<a href='trabalho.php?id=$id_servico'><p>$nome_service</p></a>";
             echo "</div>";
             echo "<div class='contractor'>";
             echo "<p>$nome_contratante</p>";

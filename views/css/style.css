@@ -865,7 +865,11 @@ button > a {
     color: #006992;
 }
 .contractor{
-    margin-top: -1.5rem;
+    margin-top: -1rem;
+}
+.dat{
+    margin-top: -2rem;
+    font-size: 12px;
 }
 .place{
     margin-top: -1.25rem;
