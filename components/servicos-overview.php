@@ -19,12 +19,14 @@ if (isset($_SESSION['account_name'])) {
 
                 <h6 class="thin text-justify">
 
-                Cada projeto de construção é único e merece a atenção e expertise adequadas para ser executado de forma eficiente e dentro do prazo. 
-                Nossa plataforma de terceirização de construção civil oferece uma ampla gama de serviços para atender às suas necessidades específicas, 
-                seja você um proprietário, um empreiteiro ou um investidor.
+                    Cada projeto de construção é único e merece a atenção e expertise adequadas para ser executado de
+                    forma eficiente e dentro do prazo.
+                    Nossa plataforma de terceirização de construção civil oferece uma ampla gama de serviços para
+                    atender às suas necessidades específicas,
+                    seja você um proprietário, um empreiteiro ou um investidor.
 
                 </h6>
-                
+
             </aside>
 
             <section class="app-rating shadow app-rating-services" style="margin-left: auto;">
@@ -44,11 +46,11 @@ if (isset($_SESSION['account_name'])) {
                 <hr class="thin-line">
 
                 <aside class="app-rating-overview">
-                    "Encontrei meu emprego dos sonhos como engenheiro estrutural em uma empresa líder do setor, 
-                    tudo graças a esta plataforma. A interface é intuitiva, e a pesquisa avançada me permitiu 
-                    filtrar vagas com base nas minhas habilidades específicas. Além disso, as ferramentas 
-                    de comunicação tornaram fácil a interação com recrutadores. Estou extremamente satisfeito 
-                    com os resultados que obtive aqui e definitivamente recomendaria a outros profissionais 
+                    "Encontrei meu emprego dos sonhos como engenheiro estrutural em uma empresa líder do setor,
+                    tudo graças a esta plataforma. A interface é intuitiva, e a pesquisa avançada me permitiu
+                    filtrar vagas com base nas minhas habilidades específicas. Além disso, as ferramentas
+                    de comunicação tornaram fácil a interação com recrutadores. Estou extremamente satisfeito
+                    com os resultados que obtive aqui e definitivamente recomendaria a outros profissionais
                     da Engenharia Civil."
                 </aside>
 
@@ -91,11 +93,11 @@ if (isset($_SESSION['account_name'])) {
                 <hr class="thin-line">
 
                 <aside class="app-rating-overview">
-                    "Depois de usar várias plataformas de recrutamento, 
-                    finalmente encontrei uma que realmente entende as necessidades 
-                    da indústria de Engenharia Civil. 
-                    Consegui uma posição como gerente de projeto 
-                    em uma grande construtora e não poderia estar mais satisfeito com os resultados. 
+                    "Depois de usar várias plataformas de recrutamento,
+                    finalmente encontrei uma que realmente entende as necessidades
+                    da indústria de Engenharia Civil.
+                    Consegui uma posição como gerente de projeto
+                    em uma grande construtora e não poderia estar mais satisfeito com os resultados.
                     Essa plataforma mudou minha carreira para melhor!"
                 </aside>
 
@@ -109,28 +111,33 @@ if (isset($_SESSION['account_name'])) {
 
             </section>
 
-            
+
             <aside class="services-text" style="margin-left: auto;">
 
                 <h6 class="thin text-justify">
 
-                Encontre profissionais qualificados da construção civil, incluindo pedreiros, carpinteiros, eletricistas, encanadores e mais. 
-                Os especialistas são exibidos com base em suas habilidades, experiência e histórico de sucesso em projetos anteriores. 
+                    Encontre profissionais qualificados da construção civil, incluindo pedreiros, carpinteiros,
+                    eletricistas, encanadores e mais.
+                    Os especialistas são exibidos com base em suas habilidades, experiência e histórico de sucesso em
+                    projetos anteriores.
 
-                Deixe o gerenciamento do seu projeto em mãos experientes. Desde o planejamento até a execução e supervisão, 
-                garantindo que ele seja entregue conforme suas especificações e no prazo determinado.
+                    Deixe o gerenciamento do seu projeto em mãos experientes. Desde o planejamento até a execução e
+                    supervisão,
+                    garantindo que ele seja entregue conforme suas especificações e no prazo determinado.
 
                 </h6>
 
                 <?php
-            if($loggedIn == false) { ?> 
-            <button class="button button-primary shadow visible"><a href="painel-cadastro.php">Crie uma conta</a></button>
-        <?php }?>
+                if ($loggedIn == false) { ?>
+                    <button class="button button-primary shadow visible"><a href="painel-cadastro.php">Crie uma
+                            conta</a></button>
+                <?php } ?>
 
-        <?php
-            if($loggedIn == true) { ?>
-                  <button class="button button-primary shadow invisible"><a href="painel-cadastro.php">Crie uma conta</a></button>
-        <?php }?>
+                <?php
+                if ($loggedIn == true) { ?>
+                    <button class="button button-primary shadow invisible"><a href="painel-cadastro.php">Crie uma
+                            conta</a></button>
+                <?php } ?>
 
             </aside>
 

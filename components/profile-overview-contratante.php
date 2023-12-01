@@ -20,26 +20,29 @@ if (isset($_SESSION['account_name'])) {
 
         <section class="profile-content">
 
-        <aside class="profile-about">
+            <aside class="profile-about">
 
-            <h2 style="margin-top: 4rem;"><?php echo "$username"; ?></h2>
-            <p>Sou contratante</p>
+                <h2 style="margin-top: 4rem;">
+                    <?php echo "$username"; ?>
+                </h2>
+                <p>Sou contratante</p>
 
-            <hr class="thin-line">
+                <hr class="thin-line">
 
-            <p class="light font-small-size text-justify">
+                <p class="light font-small-size text-justify">
 
-            <?php echo"$sobre"; ?>
+                    <?php echo "$sobre"; ?>
 
-            </p>
+                </p>
 
-            <br>
+                <br>
 
-            
-        </aside>
-        
+
+            </aside>
+
             <p>
-                <strong> Perfil muito bem avaliado na plataforma com: <span class="text-yellow">0</span> avaliações!</strong>
+                <strong> Perfil muito bem avaliado na plataforma com: <span class="text-yellow">0</span>
+                    avaliações!</strong>
             </p>
 
         </section>

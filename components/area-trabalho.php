@@ -58,60 +58,74 @@ if ($id_from_url === null) {
 }
 ?>
 
-    <main class="intro-container">
+<main class="intro-container">
 
-        <section class="jobs-container font-medium-size text-black third-gray-background shadow">
-            <a href="jobs.php"><button type="button" class="button-return button-secondary button" style="margin-top: -0rem;">Voltar</button></a>
+    <section class="jobs-container font-medium-size text-black third-gray-background shadow">
+        <a href="jobs.php"><button type="button" class="button-return button-secondary button"
+                style="margin-top: -0rem;">Voltar</button></a>
 
-            <div class="grid-trabalho">
+        <div class="grid-trabalho">
 
-                    <div class="circle-job">
-                        <img src="<?php echo $imagem_contratante;?>" alt="imagem contratante">
-                    </div>
-                    <div class="description-trabalho">
-                        <div class="title-trabalho">
-                            <p><?php echo $nome_service; ?></p>
-                        </div>
-                        <div class="dat">
-                            <p><?php echo $data_postagem; ?></p>
-                        </div>
-                        <div class="contractor">
-                            <p><?php echo $nome_contratante; ?></p>
-                        </div>
-                        <div class="place">
-                            <p><?php echo $endereco_service; ?></p>
-                        </div>
-                    </div>
+            <div class="circle-job">
+                <img src="<?php echo $imagem_contratante; ?>" alt="imagem contratante">
             </div>
-
-            <div class="description-service">
-                    <h2>Descrição do serviço: </h2>
-                    <div class="enunciado-service">
-                        <p><?php echo $descricao_service; ?></p>
-                    </div>
+            <div class="description-trabalho">
+                <div class="title-trabalho">
+                    <p>
+                        <?php echo $nome_service; ?>
+                    </p>
                 </div>
-
-                <br>
-                <br>
-                <br>
-                <br>
-
-                <div class="dados-service text-center">
-                    <h1>Relação do serviço</h1>
-                    <p>Categoria: <?php echo $categoria_service; ?></p>
-                    <p>Candidatos: 7</p>
-                    <p>Valor médio pedido pelo contratante: R$<?php echo $valor_medio; ?></p>
+                <div class="dat">
+                    <p>
+                        <?php echo $data_postagem; ?>
+                    </p>
                 </div>
-
-                <br>
-
-                <div class="text-center">
-                    <button class="button button-secondary">Candidatar-se</button>
+                <div class="contractor">
+                    <p>
+                        <?php echo $nome_contratante; ?>
+                    </p>
                 </div>
+                <div class="place">
+                    <p>
+                        <?php echo $endereco_service; ?>
+                    </p>
+                </div>
+            </div>
+        </div>
 
-        </section>
+        <div class="description-service">
+            <h2>Descrição do serviço: </h2>
+            <div class="enunciado-service">
+                <p>
+                    <?php echo $descricao_service; ?>
+                </p>
+            </div>
+        </div>
 
-        
+        <br>
+        <br>
+        <br>
+        <br>
 
-    </main>
+        <div class="dados-service text-center">
+            <h1>Relação do serviço</h1>
+            <p>Categoria:
+                <?php echo $categoria_service; ?>
+            </p>
+            <p>Candidatos: 7</p>
+            <p>Valor médio pedido pelo contratante: R$
+                <?php echo $valor_medio; ?>
+            </p>
+        </div>
 
+        <br>
+
+        <div class="text-center">
+            <button class="button button-secondary">Candidatar-se</button>
+        </div>
+
+    </section>
+
+
+
+</main>

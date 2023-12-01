@@ -11,7 +11,8 @@ if ($conn->connect_error) {
     die("Erro na conexão: " . $conn->connect_error);
 }
 
-function Login($usuario, $senha) {
+function Login($usuario, $senha)
+{
     global $conn;
 
     $usuario = $conn->real_escape_string($usuario);
@@ -61,7 +62,7 @@ function Login($usuario, $senha) {
         $_SESSION['account_sobre'] = $u->sobre_contratante;
         $_SESSION['account_imagem'] = $u->img_perfil;
         $_SESSION['type'] = 'contratante';
-        
+
         header("location: index.php");
         var_dump($_SESSION);
         return true; // Login contratante bem-sucedido
@@ -70,62 +71,66 @@ function Login($usuario, $senha) {
     return false; // Usuário não encontrado
 }
 
-function CadastrarTrabalhador($nome, $email, $especializacao, $sobre, $cep, $telefone, $login, $senha, $destino) {
+function CadastrarTrabalhador($nome, $email, $especializacao, $sobre, $cep, $telefone, $login, $senha, $destino)
+{
     $comando = 'INSERT INTO tb_trabalhadores (id_trabalhador, nome_trabalhador, login_trabalhador, senha_trabalhador, email_trabalhador,imagem_trabalhador, especializacao_trabalhador, sobre_trabalhador, escolaridade_trabalhador, cep_trabalhador, tel_trabalhador)
-    VALUES (null, "'.$nome.'", "'.$login.'", "'.$senha.'", "'.$email.'","'.$destino.'", "'.$especializacao.'", "'.$sobre.'", null, "'.$cep.'", "'.$telefone.'")';
+    VALUES (null, "' . $nome . '", "' . $login . '", "' . $senha . '", "' . $email . '","' . $destino . '", "' . $especializacao . '", "' . $sobre . '", null, "' . $cep . '", "' . $telefone . '")';
     $resultado = $GLOBALS['conn']->query($comando);
-    
+
     if ($resultado) {
         echo '<script>showCustomAlertTrabalhador("Cadastro como trabalhador realizado com sucesso!");</script>';
     } else {
-        echo "Falha ao cadastrar: ".$resultado->error;
+        echo "Falha ao cadastrar: " . $resultado->error;
     }
 }
 
-function CadastrarContratante($nome, $email, $sobre, $cep, $telefone, $login, $senha, $destino) {
+function CadastrarContratante($nome, $email, $sobre, $cep, $telefone, $login, $senha, $destino)
+{
     $comando = 'INSERT INTO tb_contratantes (id_contratante, nome_contratante, login_contratante, senha_contratante, email_contratante, img_perfil, vinculo_contratante, sobre_contratante, cep_contratante, tel_contratante) 
-    VALUES (null, "'.$nome.'", "'.$login.'", "'.$senha.'", "'.$email.'", "'.$destino.'", null, "'.$sobre.'", "'.$cep.'", "'.$telefone.'")';
+    VALUES (null, "' . $nome . '", "' . $login . '", "' . $senha . '", "' . $email . '", "' . $destino . '", null, "' . $sobre . '", "' . $cep . '", "' . $telefone . '")';
     $resultado = $GLOBALS['conn']->query($comando);
 
     if ($resultado) {
         echo '<script>showCustomAlertContratante("Cadastro como contratante realizado com sucesso!");</script>';
     } else {
-        echo "Falha ao cadastrar: ".$resultado->error;
+        echo "Falha ao cadastrar: " . $resultado->error;
     }
-    
+
 }
 
-function CadastrarServico($categoria_servico, $nome_servico, $valor_servico, $endereco_servico, $descricao_servico) {
+function CadastrarServico($categoria_servico, $nome_servico, $valor_servico, $endereco_servico, $descricao_servico)
+{
     global $conn;
 
     $descricao_servico = $conn->real_escape_string($descricao_servico);
 
     $comando = 'INSERT INTO tb_servicos (nome_servico, categoria_servico, dia_postagem, descricao_servico, endereco_servico, propostas_servico, valor_medio, fk_contratante_servicos, fk_trabalhador_servicos)
-VALUES ("'.$nome_servico.'", "'.$categoria_servico.'", NOW(), "'.$descricao_servico.'", "'.$endereco_servico.'", "", "'.$valor_servico.'", "'.$_SESSION['account_id'].'", null)';
+VALUES ("' . $nome_servico . '", "' . $categoria_servico . '", NOW(), "' . $descricao_servico . '", "' . $endereco_servico . '", "", "' . $valor_servico . '", "' . $_SESSION['account_id'] . '", null)';
 
-    
+
     $stmt = $conn->prepare($comando);
 
     if (!$stmt) {
         die('Erro na preparação da consulta: ' . $conn->error);
     }
 
-    
+
     if ($stmt->execute()) {
-        echo("Cadastrado.");
+        echo ("Cadastrado.");
         header("location:profile-contratante.php");
         exit(); // Importante terminar o script após o redirecionamento
     } else {
-        echo("Falha ao cadastrar: " . $stmt->error);
+        echo ("Falha ao cadastrar: " . $stmt->error);
         echo $comando;
     }
 }
 
 
 
-function CheckarPerfil($login) {
+function CheckarPerfil($login)
+{
     $comando = 'SELECT * FROM tb_trabalhadores 
-    WHERE login_trabalhador = "'.$login.'"
+    WHERE login_trabalhador = "' . $login . '"
     LIMIT 1';
 
     $resultado = $GLOBALS['conn']->query($comando);
@@ -143,61 +148,61 @@ function CheckarPerfil($login) {
 
 
 <div vw class="enabled">
-  <div vw-access-button class="active"></div>
-  <div vw-plugin-wrapper>
-    <div class="vw-plugin-top-wrapper"></div>
-  </div>
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
 </div>
 
 <div id="overlayContratante"></div>
 
 <div id="customAlertContratante">
     <p id="customAlertMessageContratante"></p>
-    <button class= "button button-secondary" onclick="closeCustomAlertContratante()">OK</button>
+    <button class="button button-secondary" onclick="closeCustomAlertContratante()">OK</button>
 </div>
 
 <div id="overlayTrabalhador"></div>
 
 <div id="customAlertTrabalhador">
     <p id="customAlertMessageTrabalhador"></p>
-    <button class= "button button-secondary" onclick="closeCustomAlertTrabalhador()">OK</button>
+    <button class="button button-secondary" onclick="closeCustomAlertTrabalhador()">OK</button>
 </div>
 
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
-  new window.VLibras.Widget({
-      rootPah: '/app',
-      personalization: 'https://vlibras.gov.br/config/default_logo.json',
-      opacity: 0.5,
-      position: 'R',
-      avatar: 'random',
-  });
-  function showCustomAlertContratante(message) {
-    document.getElementById('customAlertMessageContratante').textContent = message;
-    document.getElementById('overlayContratante').style.display = 'block';
-    document.getElementById('customAlertContratante').style.display = 'block';
-}
+    new window.VLibras.Widget({
+        rootPah: '/app',
+        personalization: 'https://vlibras.gov.br/config/default_logo.json',
+        opacity: 0.5,
+        position: 'R',
+        avatar: 'random',
+    });
+    function showCustomAlertContratante(message) {
+        document.getElementById('customAlertMessageContratante').textContent = message;
+        document.getElementById('overlayContratante').style.display = 'block';
+        document.getElementById('customAlertContratante').style.display = 'block';
+    }
 
-function closeCustomAlertContratante() {
-    document.getElementById('overlayContratante').style.display = 'none';
-    document.getElementById('customAlertContratante').style.display = 'none';
+    function closeCustomAlertContratante() {
+        document.getElementById('overlayContratante').style.display = 'none';
+        document.getElementById('customAlertContratante').style.display = 'none';
 
-    // Redireciona após fechar o alerta
-    window.location.href = "painel-login.php";
-}
+        // Redireciona após fechar o alerta
+        window.location.href = "painel-login.php";
+    }
 
-function showCustomAlertTrabalhador(message) {
-    document.getElementById('customAlertMessageTrabalhador').textContent = message;
-    document.getElementById('overlayTrabalhador').style.display = 'block';
-    document.getElementById('customAlertTrabalhador').style.display = 'block';
-}
+    function showCustomAlertTrabalhador(message) {
+        document.getElementById('customAlertMessageTrabalhador').textContent = message;
+        document.getElementById('overlayTrabalhador').style.display = 'block';
+        document.getElementById('customAlertTrabalhador').style.display = 'block';
+    }
 
-function closeCustomAlertTrabalhador() {
-    document.getElementById('overlayTrabalhador').style.display = 'none';
-    document.getElementById('customAlertTrabalhador').style.display = 'none';
+    function closeCustomAlertTrabalhador() {
+        document.getElementById('overlayTrabalhador').style.display = 'none';
+        document.getElementById('customAlertTrabalhador').style.display = 'none';
 
-    // Redireciona após fechar o alerta
-    window.location.href = "painel-login.php";
-}
+        // Redireciona após fechar o alerta
+        window.location.href = "painel-login.php";
+    }
 
 </script>

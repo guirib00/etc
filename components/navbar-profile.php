@@ -28,16 +28,16 @@ var_dump($userType);
                     <li><a href="jobs.php" class="shadow">Trabalhos</a></li>
                 <?php } elseif ($userType == 'contratante') { ?>
                     <li><a href="post-jobs.php" class="shadow">Postar serviço</a></li>
-                <?php }?>
+                <?php } ?>
                 <?php if ($userType == 'trabalhador') { ?>
                     <li><a href="profile-trabalhador.php" class="shadow">Perfil</a></li>
                 <?php } elseif ($userType == 'contratante') { ?>
                     <li><a href="profile-contratante.php" class="shadow">Perfil</a></li>
-                <?php }?>
+                <?php } ?>
                 <li><a href="#.php" class="shadow">Conexões</a></li>
                 <li><a href="#" class="shadow">Histórico</a></li>
             </ul>
-            
+
             <ul class="navbar-profile-links-logout">
                 <hr class="thin-line">
                 <li><a onclick="showConfirmation()">Sair</a></li>
@@ -45,7 +45,7 @@ var_dump($userType);
                 <div id="blur-overlay"></div>
                 <div id="saida" class="box1 invisible">
                     <h1>Quer mesmo sair Sair?</h1>
-                    <a href="./modules/logout.php">Confirmar</a>    
+                    <a href="./modules/logout.php">Confirmar</a>
                     <a onclick="cancel()">Cancelar</a>
                 </div>
             </ul>

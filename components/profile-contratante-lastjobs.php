@@ -4,13 +4,13 @@
 
         <section class="profile-content lastjob-content">
 
-        <aside class="profile-about lastjob-about">
+            <aside class="profile-about lastjob-about">
 
-            <h2>Serviços postados</h2>
+                <h2>Serviços postados</h2>
 
-            <hr class="thin-line">
+                <hr class="thin-line">
 
-            <section class="work-ref">
+                <section class="work-ref">
 
                     <aside class="lastjob-image">
 
@@ -30,9 +30,9 @@
 
                     <hr class="thin-line">
 
-            </section>
+                </section>
 
-            <section class="work-ref">
+                <section class="work-ref">
 
                     <aside class="lastjob-image">
 
@@ -52,9 +52,9 @@
 
                     <hr class="thin-line">
 
-            </section>
+                </section>
 
-            <section class="work-ref">
+                <section class="work-ref">
 
                     <aside class="lastjob-image">
 
@@ -74,10 +74,10 @@
 
                     <hr class="thin-line">
 
-            </section>
+                </section>
 
-            <button class="button width-full shadow"><a class="text-black font-medium-size">Exibir mais</a></button>
+                <button class="button width-full shadow"><a class="text-black font-medium-size">Exibir mais</a></button>
 
-    </section>
+        </section>
 
 </main>

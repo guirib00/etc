@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
     <?php
-        
-        include("views/favicon.php");
 
-        include("modules/meta.php");
+    include("views/favicon.php");
+
+    include("modules/meta.php");
 
 
-        include("views/fonts.php");
-        
-        include("views/styles.php");
+    include("views/fonts.php");
 
-        include("modules/scripts.php");
+    include("views/styles.php");
+
+    include("modules/scripts.php");
 
     ?>
 
@@ -23,19 +24,20 @@
 
 <body>
 
-<section class="container">
+    <section class="container">
 
-    <?php
+        <?php
 
-    include("components/navbar.php");
+        include("components/navbar.php");
 
-    include("components/intro-painel.php");
+        include("components/intro-painel.php");
 
-    include("components/login-area.php");
+        include("components/login-area.php");
 
-    ?>
+        ?>
 
-</section>
+    </section>
 
 </body>
+
 </html>

@@ -5,37 +5,38 @@ html {
 body {
     font-family: 'Open Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     letter-spacing: 0.1em;
-    font-size: 16px; /* cada REM equivale a 16 PIXELS */
+    font-size: 16px;
+    /* cada REM equivale a 16 PIXELS */
     margin: 0;
     padding: 0;
     text-rendering: optimizeLegibility;
     line-height: 1.5;
     word-spacing: 0.05em;
 }
-  
-  /* Estilos para dispositivos de tela pequena (smartphone) */
-  @media (max-width: 992px) {
-    body {
-      font-size: 8px;
-    }
-  }
 
-  /* Estilos para dispositivos de tela pequena (smartphone) */
-  @media (max-width: 768px) {
+/* Estilos para dispositivos de tela pequena (smartphone) */
+@media (max-width: 992px) {
     body {
-      font-size: 6px;
+        font-size: 8px;
     }
-  }
+}
 
-    /* Estilos para dispositivos de tela pequena (smartphone) */
-    @media (max-width: 480px) {
+/* Estilos para dispositivos de tela pequena (smartphone) */
+@media (max-width: 768px) {
+    body {
+        font-size: 6px;
+    }
+}
+
+/* Estilos para dispositivos de tela pequena (smartphone) */
+@media (max-width: 480px) {
     body {
         font-size: 4px;
-        }
     }
+}
 
 hr {
-    border:none;
+    border: none;
     background: rgba(0, 0, 0, .1);
     width: 100%;
 }
@@ -72,6 +73,7 @@ button a {
 .third-gray-background {
     background: #E6E6E6 !important;
 }
+
 .blue-background {
     background: #006992;
 }
@@ -112,7 +114,7 @@ button a {
     min-width: auto;
 }
 
-.navbar-profile ~ .navbar-connections {
+.navbar-profile~.navbar-connections {
     max-width: 18rem;
 }
 
@@ -267,7 +269,7 @@ button a {
 }
 
 .connections-header {
-    font-size: 1.5rem;    
+    font-size: 1.5rem;
 }
 
 .connections-header h1 {
@@ -294,7 +296,7 @@ button a {
     justify-content: center;
 }
 
-.navbar-profile-links-logout li a{
+.navbar-profile-links-logout li a {
     background: #fff !important;
     color: #000 !important;
 }
@@ -331,7 +333,7 @@ button a {
     align-items: center;
 }
 
-.app-rating-picture img{
+.app-rating-picture img {
     border-radius: 4rem;
     max-width: 100%;
     height: 8rem;
@@ -377,7 +379,7 @@ button a {
 }
 
 .footer .social-icons a {
-    text-decoration: none;  
+    text-decoration: none;
 }
 
 .footer .social-icons a:hover {
@@ -392,7 +394,7 @@ button a {
     text-align: center;
 }
 
-.footer-brand-logo{
+.footer-brand-logo {
     max-width: 9.5rem;
     margin-left: auto;
     margin-right: auto;
@@ -413,7 +415,7 @@ button a {
     color: #00131B;
 }
 
-button > a {
+button>a {
     text-decoration: none;
     display: flex;
     justify-content: center;
@@ -505,6 +507,7 @@ button > a {
     margin-top: 6rem;
     margin-bottom: 2rem;
 }
+
 .painel-container-login {
     max-width: 32rem;
     display: flex;
@@ -535,6 +538,7 @@ button > a {
 .painel-area input:focus {
     color: #006992;
 }
+
 .painel-area textarea {
     background: #f0f0f0;
     margin-left: auto;
@@ -580,7 +584,7 @@ button > a {
 }
 
 .profile-section {
-    position: relative;    
+    position: relative;
 }
 
 .lastjob-about {
@@ -639,15 +643,18 @@ button > a {
     width: 18rem;
     font-size: 1.5rem;
 }
-.button-return{
+
+.button-return {
     margin-top: 2rem;
     padding: 0.75rem;
     font-size: 14px;
 }
+
 .button-next {
     width: 18rem;
     font-size: 1.5rem;
 }
+
 .invisible {
     display: none;
 }
@@ -659,15 +666,17 @@ button > a {
 .visible {
     display: block;
 }
-.medium-text{
+
+.medium-text {
     font-size: 30px;
     font-weight: bold;
 }
+
 .faq-item {
     margin-bottom: 20px;
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
-    position: relative;            
+    position: relative;
 }
 
 .question {
@@ -688,39 +697,47 @@ button > a {
 .answer {
     display: none;
     margin-top: 10px;
-    font-size: 15px;    
+    font-size: 15px;
 }
 
 .answer.show {
     display: block;
 }
-.rotate{        
+
+.rotate {
     transform: rotate(180deg);
 }
+
 .faq-container {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
 }
-.button-pefil important{
+
+.button-pefil important {
     padding: 0;
 }
-.box1{
+
+.box1 {
     position: relative;
 }
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px; /* Espaço entre as colunas */
+    gap: 10px;
+    /* Espaço entre as colunas */
 }
 
 .grid-item {
     margin-bottom: 10px;
 }
-.grid-item2{
+
+.grid-item2 {
     margin-bottom: 10px;
     margin-left: 2rem;
 }
+
 .file-label {
     background-color: #006992;
     color: #fff;
@@ -728,13 +745,15 @@ button > a {
     border-radius: 4px;
     cursor: pointer;
 }
+
 #blur-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(4px); /* Ajuste o valor conforme necessário para controlar o desfoque */
+    backdrop-filter: blur(4px);
+    /* Ajuste o valor conforme necessário para controlar o desfoque */
     z-index: 1;
     display: none;
 }
@@ -756,26 +775,31 @@ button > a {
     display: inline-block;
     margin: 10px;
     padding: 1rem 2rem;
-    background: #00131B; /* Cor de fundo azul, você pode ajustar conforme necessário */
-    color: #fff; /* Cor do texto branco, você pode ajustar conforme necessário */
+    background: #00131B;
+    /* Cor de fundo azul, você pode ajustar conforme necessário */
+    color: #fff;
+    /* Cor do texto branco, você pode ajustar conforme necessário */
     text-decoration: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-#saida h1{
+#saida h1 {
     font-size: 30px;
 }
-#saida a:hover{
+
+#saida a:hover {
     background: #012331d8;
 }
+
 .dropdown-content {
     border: 2px solid #ccc;
     border-radius: 10px;
     position: absolute;
     background-color: #f9f9f9;
-    width: 250px; /* Aumente o tamanho da caixa */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    width: 250px;
+    /* Aumente o tamanho da caixa */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     top: 100%;
     left: 50%;
@@ -792,49 +816,64 @@ button > a {
     margin: 50px 5px 5px 5px;
     border-radius: 5px;
 }
-#logoutlink :hover{
+
+#logoutlink :hover {
     background: #012331d8;
 }
+
 /* Estilos para o campo de escolha de imagem */
 .grid-item label {
-    font-size: 14px; /* Reduz o tamanho do texto ao lado do campo de imagem */
-    margin-bottom: 5px; /* Adiciona um pequeno espaçamento abaixo do texto */
+    font-size: 14px;
+    /* Reduz o tamanho do texto ao lado do campo de imagem */
+    margin-bottom: 5px;
+    /* Adiciona um pequeno espaçamento abaixo do texto */
     display: block;
 }
 
 .grid-item input[type="file"] {
     /* Estilos para o botão de escolher a imagem */
-    padding: 8px 12px; /* Adiciona espaçamento interno ao botão */
-    border: 1px solid #ccc; /* Adiciona uma borda ao redor do botão */
-    border-radius: 4px; /* Adiciona bordas arredondadas ao botão */
-    background-color: #f5f5f5; /* Define uma cor de fundo para o botão */
-    color: #333; /* Define a cor do texto do botão */
-    cursor: pointer; /* Altera o cursor para indicar que é clicável */
+    padding: 8px 12px;
+    /* Adiciona espaçamento interno ao botão */
+    border: 1px solid #ccc;
+    /* Adiciona uma borda ao redor do botão */
+    border-radius: 4px;
+    /* Adiciona bordas arredondadas ao botão */
+    background-color: #f5f5f5;
+    /* Define uma cor de fundo para o botão */
+    color: #333;
+    /* Define a cor do texto do botão */
+    cursor: pointer;
+    /* Altera o cursor para indicar que é clicável */
     width: 16.5rem;
 }
 
 .grid-item input[type="file"]:hover {
-    background-color: #e0e0e0; /* Altera a cor de fundo ao passar o mouse sobre o botão */
+    background-color: #e0e0e0;
+    /* Altera a cor de fundo ao passar o mouse sobre o botão */
 }
-.jobs-container{
+
+.jobs-container {
     margin: 1.5rem auto;
     padding: 0.5rem;
     max-width: 70rem;
     min-height: 30rem;
     border-radius: 2rem;
 }
-.h1-services{
+
+.h1-services {
     margin-left: 6rem;
     font-size: 25px;
 }
-.line-jobs{
+
+.line-jobs {
     margin-left: 4rem;
     height: 0.25rem;
     margin-top: -1rem;
     width: 25rem;
     background-color: #000;
 }
-.grid-job{
+
+.grid-job {
     padding: 1rem;
     width: 60rem;
     height: 7rem;
@@ -845,45 +884,55 @@ button > a {
     margin-bottom: 2rem;
     margin-top: 1.5rem;
 }
-.circle-job img{
+
+.circle-job img {
     width: 7rem;
     height: 7rem;
     border-radius: 25%;
     border: 0.5px solid rgba(0, 0, 0, .1);
 }
-.description-job{
+
+.description-job {
     padding: 0;
     margin-left: 1rem;
 }
-.title-job{
+
+.title-job {
     display: flex;
     color: #006992;
     font-size: 1.25rem;
 }
-.title-job a{
+
+.title-job a {
     text-decoration: none;
     color: #006992;
 }
-.contractor{
+
+.contractor {
     margin-top: -1rem;
 }
-.dat{
+
+.dat {
     margin-top: -2rem;
     font-size: 12px;
 }
-.place{
+
+.place {
     margin-top: -1.25rem;
     color: #676767;
 }
-.text-pointer:hover{
-    cursor: pointer;    
+
+.text-pointer:hover {
+    cursor: pointer;
 }
+
 .container2 {
     margin-right: auto;
     margin-left: auto;
     display: flex;
     flex-direction: column;
 }
+
 .container3 {
     margin-right: auto;
     margin-left: auto;
@@ -891,19 +940,22 @@ button > a {
     flex-direction: column;
     min-height: 58.20rem;
 }
-.intro-source{
+
+.intro-source {
     margin: 1.5rem auto;
     padding: 0.5rem;
     width: 70rem;
     height: 3rem;
     border-radius: 2rem;
 }
-.source{
+
+.source {
     margin-top: -1.5rem;
     margin-left: 0.5rem;
     font-size: 20px;
 }
-.grid-trabalho{
+
+.grid-trabalho {
     padding: 1rem;
     max-width: 40rem;
     height: 7rem;
@@ -913,41 +965,51 @@ button > a {
     display: flex;
     margin-bottom: 3rem;
 }
-.description-trabalho{
+
+.description-trabalho {
     margin-top: -2.2rem;
     padding: 0;
     margin-left: 1rem;
 }
-.title-trabalho{
+
+.title-trabalho {
     font-size: 2rem;
     display: flex;
 }
-.description-service{
+
+.description-service {
     padding: 1rem;
     max-width: 40rem;
     height: 7rem;
     margin-left: auto;
     margin-right: auto;
 }
-.description-service h2{
+
+.description-service h2 {
     margin-top: -1.25rem;
 }
-.enunciado-service{
+
+.enunciado-service {
     margin-top: -1rem;
 }
-.enunciado-service p{
+
+.enunciado-service p {
     text-align: left;
 }
-.dados-service h1{
+
+.dados-service h1 {
     font-size: 1.75rem;
 }
-.title-post{
+
+.title-post {
     text-align: center;
     font-size: 1.5rem;
 }
-.post-service-form{
+
+.post-service-form {
     margin-left: 25rem;
 }
+
 #customAlertContratante {
     display: none;
     position: fixed;
@@ -981,7 +1043,8 @@ button > a {
     z-index: 999;
     backdrop-filter: blur(10px);
 }
-#customAlertTrabalhador{
+
+#customAlertTrabalhador {
     display: none;
     position: fixed;
     top: 50%;

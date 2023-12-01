@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<script src="./views/js/navegacao-cadastro.js"></script>
+    <script src="./views/js/navegacao-cadastro.js"></script>
 
     <?php
-        include("views/favicon.php");
-        
-
-        include("modules/meta.php");
+    include("views/favicon.php");
 
 
-        include("views/fonts.php");
-        
-        include("views/styles.php");
+    include("modules/meta.php");
 
-        include("modules/scripts.php");
+
+    include("views/fonts.php");
+
+    include("views/styles.php");
+
+    include("modules/scripts.php");
 
     ?>
 
@@ -25,19 +26,20 @@
 
 <body>
 
-<section class="container">
+    <section class="container">
 
-    <?php
+        <?php
 
-    include("components/navbar.php");
+        include("components/navbar.php");
 
-    include("components/intro-painel.php");
+        include("components/intro-painel.php");
 
-    include("components/register-area.php");
+        include("components/register-area.php");
 
-    ?>
+        ?>
 
-</section>
+    </section>
 
 </body>
+
 </html>

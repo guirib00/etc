@@ -40,14 +40,20 @@ var_dump($userType);
                     <!-- Botão de perfil para trabalhador -->
                     <a href="profile-trabalhador.php?id=<?php echo $_SESSION['account_id']; ?>">
                         <button class="button button-secondary button-perfil shadow" style="padding: 0.5rem 2rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"> <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" class="bi bi-person-fill"
+                                viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                            </svg>
                         </button>
                     </a>
                 <?php } elseif ($userType == 'contratante') { ?>
                     <!-- Botão de perfil para contratante -->
                     <a href="profile-contratante.php?id=<?php echo $_SESSION['account_id']; ?>">
                         <button class="button button-secondary button-perfil shadow" style="padding: 0.5rem 2rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"> <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" class="bi bi-person-fill"
+                                viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                            </svg>
                         </button>
                     </a>
                 <?php } ?>
