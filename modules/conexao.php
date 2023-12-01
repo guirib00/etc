@@ -76,16 +76,9 @@ function CadastrarTrabalhador($nome, $email, $especializacao, $sobre, $cep, $tel
     $resultado = $GLOBALS['conn']->query($comando);
     
     if ($resultado) {
-        echo "Cadastrado.";
-
-        // Adiciona um script JavaScript para exibir o alerta e redirecionar após confirmar
-        echo '<script>
-                  alert("Cadastro realizado com sucesso!");
-                  window.location.href = "painel-login.php";
-              </script>';
+        echo '<script>showCustomAlertTrabalhador("Cadastro como trabalhador realizado com sucesso!");</script>';
     } else {
         echo "Falha ao cadastrar: ".$resultado->error;
-        echo $comando;
     }
 }
 
@@ -95,11 +88,11 @@ function CadastrarContratante($nome, $email, $sobre, $cep, $telefone, $login, $s
     $resultado = $GLOBALS['conn']->query($comando);
 
     if ($resultado) {
-        echo("Cadastrado.");
-        header('location: painel-login.php');
+        echo '<script>showCustomAlertContratante("Cadastro como contratante realizado com sucesso!");</script>';
     } else {
-        echo("Falha ao cadastrar:".$resultado->error);
+        echo "Falha ao cadastrar: ".$resultado->error;
     }
+    
 }
 
 function CadastrarServico($categoria_servico, $nome_servico, $valor_servico, $endereco_servico, $descricao_servico) {
@@ -155,6 +148,21 @@ function CheckarPerfil($login) {
     <div class="vw-plugin-top-wrapper"></div>
   </div>
 </div>
+
+<div id="overlayContratante"></div>
+
+<div id="customAlertContratante">
+    <p id="customAlertMessageContratante"></p>
+    <button class= "button button-secondary" onclick="closeCustomAlertContratante()">OK</button>
+</div>
+
+<div id="overlayTrabalhador"></div>
+
+<div id="customAlertTrabalhador">
+    <p id="customAlertMessageTrabalhador"></p>
+    <button class= "button button-secondary" onclick="closeCustomAlertTrabalhador()">OK</button>
+</div>
+
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
   new window.VLibras.Widget({
@@ -164,4 +172,32 @@ function CheckarPerfil($login) {
       position: 'R',
       avatar: 'random',
   });
+  function showCustomAlertContratante(message) {
+    document.getElementById('customAlertMessageContratante').textContent = message;
+    document.getElementById('overlayContratante').style.display = 'block';
+    document.getElementById('customAlertContratante').style.display = 'block';
+}
+
+function closeCustomAlertContratante() {
+    document.getElementById('overlayContratante').style.display = 'none';
+    document.getElementById('customAlertContratante').style.display = 'none';
+
+    // Redireciona após fechar o alerta
+    window.location.href = "painel-login.php";
+}
+
+function showCustomAlertTrabalhador(message) {
+    document.getElementById('customAlertMessageTrabalhador').textContent = message;
+    document.getElementById('overlayTrabalhador').style.display = 'block';
+    document.getElementById('customAlertTrabalhador').style.display = 'block';
+}
+
+function closeCustomAlertTrabalhador() {
+    document.getElementById('overlayTrabalhador').style.display = 'none';
+    document.getElementById('customAlertTrabalhador').style.display = 'none';
+
+    // Redireciona após fechar o alerta
+    window.location.href = "painel-login.php";
+}
+
 </script>
