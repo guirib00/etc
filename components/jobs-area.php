@@ -48,9 +48,9 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $nome_service = $row['nome_servico'];
         $categoria_service = $row['categoria_servico'];
+        $endereco_service = $row['endereco_servico'];
         $id_contratante = $row['fk_contratante_servicos'];
 
-        // Consulta para obter detalhes do contratante associado ao serviço
         $sql_contratante = "SELECT * FROM tb_contratantes WHERE id_contratante = $id_contratante";
         $result_contratante = $conn->query($sql_contratante);
 
@@ -59,7 +59,6 @@ if ($result->num_rows > 0) {
             $imagem_contratante = $row_contratante['img_perfil'];
             $nome_contratante = $row_contratante['nome_contratante'];
 
-            // Aqui, você exibirá os detalhes do serviço e contratante dentro do loop
             echo "<div class='grid-job'>";
             echo "<div class='circle-job'>";
             echo "<img src='$imagem_contratante' alt='imagem contratante'>";
@@ -72,7 +71,7 @@ if ($result->num_rows > 0) {
             echo "<p>$nome_contratante</p>";
             echo "</div>";
             echo "<div class='place'>";
-            echo "<p>Rua Amaro Prado, Itanhaém, SP, Brasil</p>"; // Detalhes do local, substitua conforme necessário
+            echo "<p>$endereco_service</p>"; 
             echo "</div>";
             echo "</div>";
             echo "</div>";

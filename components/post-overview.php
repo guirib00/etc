@@ -4,8 +4,9 @@
         $categoria_servico = $_POST['categoria-servico'];
         $nome_servico = $_POST['nome-servico'];
         $valor_servico = $_POST['valor'];
+        $endereco_servico = $_POST['endereco'];
         $descricao_servico = $_POST['descricao-servico'];
-        CadastrarServico($categoria_servico, $nome_servico, $valor_servico, $descricao_servico);
+        CadastrarServico($categoria_servico, $nome_servico, $valor_servico, $endereco_servico,$descricao_servico);
     }
 
 ?>
@@ -26,6 +27,9 @@
 
                 <label>Qual valor médio deseja pagar?</label>
                 <input type="text" class="form-control" name="valor" placeholder="Digite o valor" required autocomplete="on"></input>
+
+                <label>Endereço</label>
+                <input type="text" class="form-control" name="endereco" placeholder="Digite o endereço" required autocomplete="on"></input>
 
                 <label>Descrição do serviço</label>
                 <textarea type="text" class="form-control" name="descricao-servico" placeholder="Digite a descrição"></textarea>

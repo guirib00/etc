@@ -89,6 +89,7 @@ CREATE TABLE IF NOT EXISTS `bd_etc2.0`.`tb_servicos` (
   `categoria_servico` VARCHAR(20) NOT NULL,
   `dia_postagem` DATE NULL,
   `descricao_servico` VARCHAR(150) NOT NULL,
+  `endereco_servico` VARCHAR(150) NOT NULL,
   `propostas_servico` INT NOT NULL,
   `valor_medio` VARCHAR(15) NOT NULL,
   `fk_contratante_servicos` INT NOT NULL,
