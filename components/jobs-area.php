@@ -1,4 +1,22 @@
-<main class="intro-container">
+<?php
+// Verifica se o usuário está autenticado
+if (isset($_SESSION['account_name'])) {
+    $loggedIn = true;
+    $username = $_SESSION['account_name'];
+} else {
+    $loggedIn = false;
+}
+
+if (isset($_SESSION['type'])) {
+    $userType = $_SESSION['type'];
+} else {
+    $userType = ''; // ou qualquer valor padrão que faça sentido para sua lógica
+}
+
+var_dump($userType);
+?>
+
+<main class="intro-container  height-full">
 <section class="intro-source font-medium-size shadow text-black third-gray-background">
     <div class="search-icon" style="display: inline-block; vertical-align: middle; margin-left: 4rem;">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -14,143 +32,57 @@
 </section>
 
 
-
-
-    <section class="jobs-container font-medium-size text-black third-gray-background shadow">
+<section class="jobs-container font-medium-size text-black third-gray-background shadow">
 
            <h1 class="h1-services">Serviços recomendados</h1>
            <hr class="line-jobs">
 
-           <div class="grid-job">
-
-                <div class="circle-job">
-                    <img src="./views/images/construtor-1.jpg" alt="imagem contratante">
-                </div>
-                <div class="description-job">
-                    <div class="title-job">
-                        <a href="trabalho.php"><p>Reforma da sala de reuniões</p></a>
-                    </div>
-                    <div class="contractor">
-                        <p>Company</p>
-                    </div>
-                    <div class="place">
-                        <p>Rua Amaro Prado, Itanhaém, SP, Brasil</p>
-                    </div>
-                </div>
-
-           </div>
-
-           <div class="grid-job">
-
-                <div class="circle-job">
-                    <img src="./views/images/construtor-2.png" alt="imagem contratante">
-                </div>
-                <div class="description-job">
-                    <div class="title-job text-pointer">
-                        <p>Reforma da sala de reuniões</p>
-                    </div>
-                    <div class="contractor">
-                        <p>Company</p>
-                    </div>
-                    <div class="place">
-                        <p>Rua Amaro Prado, Itanhaém, SP, Brasil</p>
-                    </div>
-                </div>
-                
-           </div>
 
 
-           <div class="grid-job">
+<?php
 
-                <div class="circle-job">
-                    <img src="./views/images/construtor-3.png" alt="imagem contratante">
-                </div>
-                <div class="description-job">
-                    <div class="title-job text-pointer">
-                        <p>Reforma da sala de reuniões</p>
-                    </div>
-                    <div class="contractor">
-                        <p>Company</p>
-                    </div>
-                    <div class="place">
-                        <p>Rua Amaro Prado, Itanhaém, SP, Brasil</p>
-                    </div>
-                </div>
-                
-           </div>
+$sql = "SELECT * FROM tb_servicos";
+$result = $conn->query($sql);
 
-           <hr class="thin-line">
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $nome_service = $row['nome_servico'];
+        $categoria_service = $row['categoria_servico'];
+        $id_contratante = $row['fk_contratante_servicos'];
 
-           <h1 class="text-center text-pointer">Exibir mais</h1>
+        // Consulta para obter detalhes do contratante associado ao serviço
+        $sql_contratante = "SELECT * FROM tb_contratantes WHERE id_contratante = $id_contratante";
+        $result_contratante = $conn->query($sql_contratante);
 
+        if ($result_contratante->num_rows > 0) {
+            $row_contratante = $result_contratante->fetch_assoc();
+            $imagem_contratante = $row_contratante['img_perfil'];
+            $nome_contratante = $row_contratante['nome_contratante'];
 
-    </section>
-    <section class="jobs-container font-medium-size text-black third-gray-background shadow">
+            // Aqui, você exibirá os detalhes do serviço e contratante dentro do loop
+            echo "<div class='grid-job'>";
+            echo "<div class='circle-job'>";
+            echo "<img src='$imagem_contratante' alt='imagem contratante'>";
+            echo "</div>";
+            echo "<div class='description-job'>";
+            echo "<div class='title-job'>";
+            echo "<a href='trabalho.php'><p>$nome_service</p></a>";
+            echo "</div>";
+            echo "<div class='contractor'>";
+            echo "<p>$nome_contratante</p>";
+            echo "</div>";
+            echo "<div class='place'>";
+            echo "<p>Rua Amaro Prado, Itanhaém, SP, Brasil</p>"; // Detalhes do local, substitua conforme necessário
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+        }
+    }
+} else {
+    echo "Nenhum serviço encontrado.";
+}
+?>
 
-           <h1 class="h1-services">Serviços mais recentes</h1>
-           <hr class="line-jobs">
-
-           <div class="grid-job">
-
-                <div class="circle-job">
-                    <img src="./views/images/construtor-1.jpg" alt="imagem contratante">
-                </div>
-                <div class="description-job">
-                    <div class="title-job text-pointer">
-                        <p>Reforma da sala de reuniões</p>
-                    </div>
-                    <div class="contractor">
-                        <p>Company</p>
-                    </div>
-                    <div class="place">
-                        <p>Rua Amaro Prado, Itanhaém, SP, Brasil</p>
-                    </div>
-                </div>
-
-           </div>
-
-           <div class="grid-job">
-
-                <div class="circle-job">
-                    <img src="./views/images/construtor-2.png" alt="imagem contratante">
-                </div>
-                <div class="description-job">
-                    <div class="title-job text-pointer">
-                        <p>Reforma da sala de reuniões</p>
-                    </div>
-                    <div class="contractor">
-                        <p>Company</p>
-                    </div>
-                    <div class="place">
-                        <p>Rua Amaro Prado, Itanhaém, SP, Brasil</p>
-                    </div>
-                </div>
-                
-           </div>
-
-
-           <div class="grid-job">
-
-                <div class="circle-job">
-                    <img src="./views/images/construtor-3.png" alt="imagem contratante">
-                </div>
-                <div class="description-job">
-                    <div class="title-job text-pointer">
-                        <p>Reforma da sala de reuniões</p>
-                    </div>
-                    <div class="contractor">
-                        <p>Company</p>
-                    </div>
-                    <div class="place">
-                        <p>Rua Amaro Prado, Itanhaém, SP, Brasil</p>
-                    </div>
-                </div>
-                
-           </div>
-
-           <hr class="thin-line">
-
-           <h1 class="text-center text-pointer">Exibir mais</h1>
 
 
     </section>
@@ -158,4 +90,6 @@
     
 
 </main>
+
+           
 

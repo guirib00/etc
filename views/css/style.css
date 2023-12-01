@@ -486,7 +486,7 @@ button > a {
 }
 
 .height-full {
-    height: 100%;
+    height: 60rem !important;
 }
 
 .width-full {
