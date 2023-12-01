@@ -76,10 +76,15 @@ function CadastrarTrabalhador($nome, $email, $especializacao, $sobre, $cep, $tel
     $resultado = $GLOBALS['conn']->query($comando);
     
     if ($resultado) {
-        echo("Cadastrado.");
-        header("location: painel-login.php");
+        echo "Cadastrado.";
+
+        // Adiciona um script JavaScript para exibir o alerta e redirecionar após confirmar
+        echo '<script>
+                  alert("Cadastro realizado com sucesso!");
+                  window.location.href = "painel-login.php";
+              </script>';
     } else {
-        echo("Falha ao cadastrar:".$resultado->error);
+        echo "Falha ao cadastrar: ".$resultado->error;
         echo $comando;
     }
 }
