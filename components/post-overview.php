@@ -12,8 +12,8 @@
                 <label for="service-name">Nome serviço</label>
                 <input type="text" class="form-control" name="nome-servico" placeholder="Digite um nome para o serviço"></input>
 
-                <label>Durante quantos dias deseja receber propostas?</label>
-                <input type="number" class="form-control" name="dias-servico" placeholder="Digite quantos dias" required autocomplete="on"></input>
+                <label>Qual valor médio deseja pagar?</label>
+                <input type="text" class="form-control" name="valor" placeholder="Digite o valor" required autocomplete="on"></input>
 
                 <label>Descrição do serviço</label>
                 <textarea type="text" class="form-control" name="descricao-servico" placeholder="Digite a descrição"></textarea>
