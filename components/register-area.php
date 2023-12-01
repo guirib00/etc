@@ -35,14 +35,15 @@
                 CadastrarContratante($nome, $email, $sobre, $cep, $telefone, $login, $senha, $destino);
             }
         } else {
-            $erro = "As senhas são diferentes";
+            $erro = "<script> window.alert('As senhas estão diferentes'); </script>";
         }
     }
 ?>
 
+
 <section class="register-area">
     <section class="painel-container white-background shadow">
-        <form id="completeForm" method="post" enctype="multipart/form-data">
+        <form id="completeForm" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
             <aside class="rounded-circle">
                 <a href="index.php"> <img src=" ./views/images/main_logo_alt.png"> </a>
             </aside>
@@ -108,9 +109,8 @@
                         <input type="password" name="confirm_pass" placeholder="Confirmar senha" required>
                     </div>
                 </div>
-                <?php if (!empty($erro)) : ?>
-                    <p class="error-message text-center"><?php echo $erro; ?></p>
-                <?php endif; ?>
+
+
             </div>
 
             <!-- Parte 2 - Campos específicos do contratante -->
@@ -155,7 +155,7 @@
                     </div>
                 </div>
                 <?php if (!empty($erro)) : ?>
-                    <p class="error-message text-center"><?php echo $erro; ?></p>
+                    <p class="error-message text-center"><?php echo html_entity_decode($erro); ?></p>
                 <?php endif; ?>
             </div>
 
@@ -193,9 +193,7 @@
         }
     }
 
-    function submitForm() {
-        document.getElementById("completeForm").submit();
-    }
+    
 
     function returnPart() {
         var formPart1 = document.getElementById('formPart1');
@@ -211,4 +209,20 @@
         document.getElementById('cadastrar').classList.add('invisible');
         document.getElementById('login').classList.add('invisible');
     }
+    function validateForm() {
+        var senha = document.getElementsByName("senha")[0].value;
+        var confirmarSenha = document.getElementsByName("confirm_pass")[0].value;
+
+        if (senha !== confirmarSenha) {
+            alert("Senhas diferentes");
+            return false; // Impede o envio do formulário
+        }
+
+        return true; // Permite o envio do formulário se as senhas forem iguais
+    }
+function submitForm() {
+    if (validateForm()) {
+        document.getElementById("completeForm").submit();
+    }
+}
 </script>
