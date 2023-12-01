@@ -1003,7 +1003,7 @@ button > a {
     margin-bottom: 2rem;
 }
 
-#overlaytrabalhador {
+#overlayTrabalhador {
     display: none;
     position: fixed;
     top: 0;
