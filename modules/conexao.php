@@ -35,7 +35,7 @@ function Login($usuario, $senha) {
         $_SESSION['account_especializacao'] = $u->especializacao_trabalhador;
         $_SESSION['account_sobre'] = $u->sobre_trabalhador;
         $_SESSION['account_imagem'] = $u->imagem_trabalhador;
-        header("location: index.php");
+        echo '<script>LoginRealize();</script>';
         var_dump($_SESSION);
         $_SESSION['type'] = 'trabalhador';
         return true; // Login trabalhador bem-sucedido
@@ -61,8 +61,7 @@ function Login($usuario, $senha) {
         $_SESSION['account_sobre'] = $u->sobre_contratante;
         $_SESSION['account_imagem'] = $u->img_perfil;
         $_SESSION['type'] = 'contratante';
-        
-        header("location: index.php");
+        echo '<script>LoginRealize();</script>';
         var_dump($_SESSION);
         return true; // Login contratante bem-sucedido
     }
@@ -112,11 +111,10 @@ VALUES ("'.$nome_servico.'", "'.$categoria_servico.'", NOW(), "'.$descricao_serv
 
     
     if ($stmt->execute()) {
-        echo("Cadastrado.");
-        header("location:profile-contratante.php");
+        echo '<script>showCadastrarServico("Serviço postado com sucesso");</script>';
         exit(); // Importante terminar o script após o redirecionamento
     } else {
-        echo("Falha ao cadastrar: " . $stmt->error);
+        echo "Falha ao cadastrar: " . $stmt->error;
         echo $comando;
     }
 }
@@ -141,6 +139,7 @@ function CheckarPerfil($login) {
 }
 ?>
 
+<meta charset="UTF-8" />
 
 <div vw class="enabled">
   <div vw-access-button class="active"></div>
@@ -162,6 +161,14 @@ function CheckarPerfil($login) {
     <p id="customAlertMessageTrabalhador"></p>
     <button class= "button button-secondary" onclick="closeCustomAlertTrabalhador()">OK</button>
 </div>
+
+<div id="overlayServico"></div>
+
+<div id="customAlertServico">
+    <p id="customAlertMessageServico"></p>
+    <button class= "button button-secondary" onclick="closeCustomAlertServico()">OK</button>
+</div>
+
 
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
@@ -199,5 +206,16 @@ function closeCustomAlertTrabalhador() {
     // Redireciona após fechar o alerta
     window.location.href = "painel-login.php";
 }
+function LoginRealize(){
+    window.location.href = "index.php";
+}
 
+function showCadastrarServico(message) {
+    document.getElementById('customAlertMessageServico').textContent = message;
+    document.getElementById('overlayServico').style.display = 'block';
+    document.getElementById('customAlertServico').style.display = 'block';
+}
+function closeCustomAlertServico() {
+    window.location.href = "profile-contratante.php";
+}
 </script>
