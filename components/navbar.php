@@ -38,22 +38,18 @@ var_dump($userType);
             <?php if ($loggedIn == true) { ?>
                 <?php if ($userType == 'trabalhador') { ?>
                     <!-- Botão de perfil para trabalhador -->
-                    <a href="profile.php?id=<?php echo $_SESSION['account_id']; ?>">
+                    <a href="profile-trabalhador.php?id=<?php echo $_SESSION['account_id']; ?>">
                         <button class="button button-secondary button-perfil shadow" style="padding: 0.5rem 2rem;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"> <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
                         </button>
                     </a>
                 <?php } elseif ($userType == 'contratante') { ?>
                     <!-- Botão de perfil para contratante -->
-                    <div class="dropdown" style="position: relative;">
-                        <button onclick="showContractorProfile()" class="button button-secondary button-perfil shadow" style="padding: 0.5rem 2rem;">
+                    <a href="profile-contratante.php?id=<?php echo $_SESSION['account_id']; ?>">
+                        <button class="button button-secondary button-perfil shadow" style="padding: 0.5rem 2rem;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"> <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
                         </button>
-                        <div id="contractorProfile" class="dropdown-content text-center" style="display: none; position: absolute; background-color: #f9f9f9; min-width: 120px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1;">
-                            <p id="contractorName" style="margin: 5px;"><?php echo $username; ?></p>
-                            <a id="logoutLink" href="./modules/logout.php">Sair</a>
-                        </div>
-                    </div>
+                    </a>
                 <?php } ?>
             <?php } ?>
         </section>

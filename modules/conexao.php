@@ -58,6 +58,8 @@ function Login($usuario, $senha) {
         $_SESSION['account_email'] = $u->email_contratante;
         $_SESSION['account_id'] = $u->id_contratante;
         $_SESSION['account_login'] = $u->login_contratante;
+        $_SESSION['account_sobre'] = $u->sobre_contratante;
+        $_SESSION['account_imagem'] = $u->img_perfil;
         $_SESSION['type'] = 'contratante';
         
         header("location: index.php");
