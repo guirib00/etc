@@ -11,7 +11,7 @@ if (isset($_SESSION['account_name'])) {
 
     <section class="intro-background shadow">
 
-        <img class="gray-filter" src="./views/images/background-one.png" alt="Construtores em serviço.">
+        <img class="gray-filter" src="./views/images/background-one.png" alt="Construtores em serviço."> 
 
     </section>
 
@@ -21,20 +21,20 @@ if (isset($_SESSION['account_name'])) {
 
         <h6 class="thin text-justify">
 
-            Somos uma empresa especializada em pesquisa de empregos e recrutamento,
-            dedicada exclusivamente ao setor da Construção Civil.
+        Somos uma empresa especializada em pesquisa de empregos e recrutamento, 
+        dedicada exclusivamente ao setor da Construção Civil.
 
         </h6>
         <?php
-        if ($loggedIn == false) { ?>
+            if($loggedIn == false) { ?> 
             <button class="button button-primary shadow visible"><a href="painel-cadastro.php">Crie uma conta</a></button>
-        <?php } ?>
-
+        <?php }?>
+        
 
         <?php
-        if ($loggedIn == true) { ?>
-            <button class="button button-primary shadow invisible"><a href="painel-cadastro.php">Crie uma conta</a></button>
-        <?php } ?>
+            if($loggedIn == true) { ?>
+                  <button class="button button-primary shadow invisible"><a href="painel-cadastro.php">Crie uma conta</a></button>
+        <?php }?>
     </section>
 
 </main>

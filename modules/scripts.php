@@ -4,7 +4,7 @@
 <!-- SCRIPT para funcionar o DARKMODE -->
 <script>
 
-
+  
   /* function addDarkmodeWidget() {
     const options = {
     bottom: '16px', // default: '32px'
@@ -26,8 +26,8 @@
 
   window.addEventListener('load', addDarkmodeWidget);
   */
-
-
+  
+  
   /* var options = {
     startAt: "23:00",
     endAt: "06:00"

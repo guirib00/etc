@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 
     <?php
-    include("views/favicon.php");
+        include("views/favicon.php");
+        
+        include("modules/conexao.php");
 
-    include("modules/conexao.php");
-
-    include("modules/meta.php");
+        include("modules/meta.php");
 
 
-    include("views/fonts.php");
+        include("views/fonts.php");
+        
+        include("views/styles.php");
 
-    include("views/styles.php");
-
-    include("modules/scripts.php");
+        include("modules/scripts.php");
 
     ?>
 
@@ -24,23 +23,22 @@
 </head>
 
 <body>
+    
+<section class="container">
 
-    <section class="container">
+    <?php
 
-        <?php
+    include("components/navbar.php");
 
-        include("components/navbar.php");
+    include("components/intro.php");
 
-        include("components/intro.php");
+    include("components/app-ratings.php");
 
-        include("components/app-ratings.php");
+    include("components/footer.php");
 
-        include("components/footer.php");
+    ?>
 
-        ?>
-
-    </section>
+</section>
 
 </body>
-
 </html>

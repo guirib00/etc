@@ -20,8 +20,7 @@
             </div>
 
             <div class="answer">
-                Para contratar um trabalhador, deve logar em sua conta como contratante, entrar no perfil do trabalhador
-                e entrar em contato com ele.
+                Para contratar um trabalhador, deve logar em sua conta como contratante, entrar no perfil do trabalhador e entrar em contato com ele.
             </div>
         </div>
 
@@ -36,8 +35,7 @@
         </div>
 
         <div class="faq-item">
-            <div class="question" onclick="toggleAnswer(this)"> Se o trabalho não for concluido recebo o dinheiro de
-                volta?
+            <div class="question" onclick="toggleAnswer(this)"> Se o trabalho não for concluido recebo o dinheiro de volta?
                 <i class="arrow-icon fas fa-chevron-down"></i>
             </div>
 
