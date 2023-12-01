@@ -97,6 +97,33 @@ function CadastrarContratante($nome, $email, $sobre, $cep, $telefone, $login, $s
     }
 }
 
+function CadastrarServico($categoria_servico, $nome_servico, $valor_servico, $descricao_servico) {
+    global $conn;
+
+    $descricao_servico = $conn->real_escape_string($descricao_servico);
+
+    $comando = 'INSERT INTO tb_servicos (nome_servico, categoria_servico, dia_postagem, descricao_servico, propostas_servico, valor_medio, fk_contratante_servicos, fk_trabalhador_servicos)
+VALUES (?, ?, NOW(), ?, "", ?, ?, null)';
+
+    
+    $stmt = $conn->prepare($comando);
+
+    if (!$stmt) {
+        die('Erro na preparação da consulta: ' . $conn->error);
+    }
+
+    $stmt->bind_param("sssis", $nome_servico, $categoria_servico, $descricao_servico, $valor_servico, $_SESSION['account_id']);
+    
+    if ($stmt->execute()) {
+        echo("Cadastrado.");
+        exit(); // Importante terminar o script após o redirecionamento
+    } else {
+        echo("Falha ao cadastrar: " . $stmt->error);
+    }
+}
+
+
+
 function CheckarPerfil($login) {
     $comando = 'SELECT * FROM tb_trabalhadores 
     WHERE login_trabalhador = "'.$login.'"

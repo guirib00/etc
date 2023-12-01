@@ -1,10 +1,22 @@
+<?php
+
+    if($_POST){
+        $categoria_servico = $_POST['categoria-servico'];
+        $nome_servico = $_POST['nome-servico'];
+        $valor_servico = $_POST['valor'];
+        $descricao_servico = $_POST['descricao-servico'];
+        CadastrarServico($categoria_servico, $nome_servico, $valor_servico, $descricao_servico);
+    }
+
+?>
+
 <main class="intro-container">
 
     <section class="jobs-container font-medium-size text-black third-gray-background shadow">
         <div class="title-post">
             <h1>Publique um serviço</h1>
         </div>
-        <form action="" method="post" class="post-service-form">
+        <form action="" method="post" class="post-service-form" id="completeForm">
             <div class="description-post grid-item painel-area">
                 <label for="service-categoria">Categoria</label>
                 <input type="text" class="form-control" name="categoria-servico" placeholder="Digite a categoria" required autocomplete="on"></input>
@@ -19,7 +31,7 @@
                 <textarea type="text" class="form-control" name="descricao-servico" placeholder="Digite a descrição"></textarea>
             </div>
 
-            <button class="button button-secondary">Publicar serviço</button>
+            <button onclick="submitForm()" type="button" class="button button-secondary" id="cadastrar">Publicar serviço</button>
         </form>
 
     </section>
@@ -28,3 +40,9 @@
 
 </main>
 
+
+<script>
+    function submitForm() {
+        document.getElementById("completeForm").submit();
+    }
+</script>
